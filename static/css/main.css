@@ -1,12 +1,18 @@
-/* #FF2400; TOCHANGE*/
+:root {
+  --accent-color: #FF2400;
+  --inactive-color: #FFF;
+  --body-color: #787878;
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
 
+  color: var(--body-color);
+
+  /*background color-related*/
   background: #0f2027;
   background: -webkit-linear-gradient(to right, #0f2027, #203a43, #2c5364);
   background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-
-  color: #787878;
 }
 
 h1 {
@@ -20,11 +26,16 @@ h2 {
   line-height: 12px;
 }
 
-h3 {
+.link {
   font-size: 65px;
   text-transform: uppercase;
-  color: white;
-  line-height: 80%
+  font-weight: 200;
+  color: var(--inactive-color);
+  line-height: 92%
+}
+
+.link-content {
+  color: inherit;
 }
 
 a {
@@ -32,7 +43,7 @@ a {
 }
 
 a:hover {
-  color: #FF2400; /*TOCHANGE*/
+  color: var(--accent-color);
   text-decoration: none;
 }
 
@@ -42,7 +53,6 @@ h2 a:hover {
   text-decoration-skip-ink: none;
   text-decoration-line: underline;
 }
-
 
 .heading {
   margin-top: 64px;
@@ -55,18 +65,18 @@ listgroup bootstrap override
 
 .list-group-item-action {
   width: 100%;
-  color: white;
+  color: var(--inactive-color);
   text-align: inherit;
 }
 
 .list-group-item-action:hover, .list-group-item-action:focus {
-  color: #FF2400;
+  color: var(--accent-color);
   text-decoration: none;
   background-color:inherit;
 }
 
 .list-group-item-action:active {
-  color: #FF2400;
+  color: var(--accent-color);
   background-color: inherit;
 }
 
@@ -90,5 +100,4 @@ listgroup bootstrap override
 }
 
 #list-tab {
-    border-left: 5px solid #FF2400;/*TOCHANGE*/
-}
+    border-left: 5px solid var(--accent-color);

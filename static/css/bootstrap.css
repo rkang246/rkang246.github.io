@@ -2929,7 +2929,7 @@ input[type="button"].btn-block {
 }
 
 .fade {
-  transition: opacity 0.15s linear;
+  transition: opacity 0.2s linear;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
