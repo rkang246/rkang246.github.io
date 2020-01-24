@@ -1,0 +1,58 @@
+body {
+  font-family: 'Montserrat', sans-serif
+
+  background: #0f2027;
+  background: -webkit-linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+
+  color: #42535A;
+}
+
+h1 {
+  font-size: 22px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 15px;
+  line-height: 12px;
+}
+
+h3 {
+  font-size: 50px;
+  text-transform: uppercase;
+  color: white;
+  line-height: 52px;
+  font-weight: bold;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: #FF2400;
+  text-decoration: none;
+}
+
+h2 a:hover {
+  color: inherit;
+  text-decoration-style: dotted;
+  text-decoration-skip-ink: none;
+  text-decoration-line: underline;
+}
+
+
+.heading {
+  margin-top: 64px;
+  margin-bottom: 32px;
+}
+
+.links {
+  border-left: 5px solid #FF2400;
+  padding-left: 20px;
+}
+
+.toggled-content {
+  color: white;
+}
