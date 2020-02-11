@@ -3,7 +3,7 @@
 <!-- make mobile friendly and the fact that clicking off unhighlights list group -->
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Robert Kang</title>
   <!-- CSS -->
 <link href="static/css/bootstrap.css" rel="stylesheet">
@@ -18,55 +18,55 @@
   <div class="container">
     <div class="row">
 
-      <div class = "col-sm">
-        <div class="heading">
+      <div class = "col-12">
+        <div class="heading animated fadeIn slower">
           <h1>Robert Kang</h1>
-          <h2>computer science student</h2>
-          <h2>university of michigan</h2>
-          <h2>reading <strong><a href="https://mitpress.mit.edu/books/free-will" target="_blank">free will</a></strong> by mark balaguer</h2>
+          <h2 class="animated fadeIn slower delay-1s">computer science student</h2>
+          <h2 class="animated fadeIn slower delay-1s">university of michigan</h2>
+          <h2 class="animated fadeIn slower delay-1s">reading <strong><a href="https://mitpress.mit.edu/books/free-will" target="_blank">free will</a></strong> by mark balaguer</h2>
         </div>
-        <!-- listgroup and content-->
-        <div class="row">
-          <div class="col-8">
-            <div class="list-group" id="list-tab" role="tablist">
-              <a class="list-group-item list-group-item-action link" id="list-bio-first" data-toggle="tab" href="#list-first" role="tab" aria-controls="list-first">Bio</a>
-              <a class="list-group-item list-group-item-action link" id="list-second-list" data-toggle="tab" href="#list-second" role="tab" aria-controls="list-second">Work</a>
-              <a class="list-group-item list-group-item-action link" id="list-third-list" data-toggle="tab" href="#list-third" role="tab" aria-controls="list-third">Projects</a>
-              <a class="list-group-item list-group-item-action link" id="list-fourth-list" data-toggle="tab" href="#list-fourth" role="tab" aria-controls="list-fourth">Coursework</a>
-            </div>
+      </div>
+    <!-- listgroup and content-->
+      <div class="col-8 animated fadeIn slower delay-3s">
+        <div class="list-group" id="list-tab" role="tablist">
+          <a class="list-group-item list-group-item-action active link" id="list-bio-first" data-toggle="tab" href="#list-first" role="tab" aria-controls="list-first">Bio</a>
+          <a class="list-group-item list-group-item-action link" id="list-second-list" data-toggle="tab" href="#list-second" role="tab" aria-controls="list-second">Work</a>
+          <a class="list-group-item list-group-item-action link" id="list-third-list" data-toggle="tab" href="#list-third" role="tab" aria-controls="list-third">Projects</a>
+          <a class="list-group-item list-group-item-action link" id="list-fourth-list" data-toggle="tab" href="#list-fourth" role="tab" aria-controls="list-fourth">Coursework</a>
+        </div>
 
-            <div class="contact">
-              <a href="https://github.com/rkang246" target="_blank">github</a> /
-              <a href="https://www.linkedin.com/in/robert-kang-54955a185/" target="_blank">linkedin</a> /
-              <a href="files/resume.pdf" target="_blank">resume</a> /
-              <a href="mailto:rqkang@umich.edu">rqkang@umich.edu</a>
-            </div>
-          </div>
+        <div class="contact">
+          <a href="https://github.com/rkang246" target="_blank">github</a> /
+          <a href="https://www.linkedin.com/in/robert-kang-54955a185/" target="_blank">linkedin</a> /
+          <a href="files/resume.pdf" target="_blank">resume</a> /
+          <a href="mailto:rqkang@umich.edu">rqkang@umich.edu</a>
+        </div>
+      </div>
 
-          <div class="col-4">
-            <div class="tab-content" id="nav-tabContent">
-              <div class="tab-pane link-content fade show active" id="list-landing" role="tabpanel" aria-labelledby="list-landing-list">
-                <p> am taking color scheme suggestions please dm serious business inquiries to https://www.farmersonly.com/profiles/robert_kang</p>
-                <p> or share a google docs with edit permissions and we can chat there </p>
-                <p> alternatively use the email down there</p>
-              </div>
-              <div class="tab-pane link-content fade" id="list-first" role="tabpanel" aria-labelledby="list-first-list">
-                <p>biology is science of life. its name originated from the greek words bios, meaning life or living, and logos means studying. neither of which i have been doing recently</p>
-              </div>
-              <div class="tab-pane link-content fade" id="list-second" role="tabpanel" aria-labelledby="list-second-list">
-                <p>am a single father of 0 please hire</p>
-              </div>
-              <div class="tab-pane link-content fade" id="list-third" role="tabpanel" aria-labelledby="list-third-list">
-                <p>in nineth grade i built a powerpoint presentation that taught my classmates about zoroastrianism</p>
-              </div>
-              <div class="tab-pane link-content fade" id="list-fourth" role="tabpanel" aria-labelledby="list-fourth-list">
-                <p> yes mom i know it's not mobile friendly</p>
-                <p>seriouslly tho im not done making this come back later </p>
-              </div>
-            </div>
+      <div class="col-4 animated fadeIn slower delay-3s">
+        <div class="tab-content link-content" id="nav-tabContent">
+          <div class="tab-pane fade" id="list-landing" role="tabpanel" aria-labelledby="list-landing-list">
+            <p> am taking color scheme suggestions please dm serious business inquiries to https://www.farmersonly.com/profiles/robert_kang</p>
+            <p> or share a google docs with edit permissions and we can chat there </p>
+            <p> alternatively use the email down there</p>
           </div>
+          <div class="tab-pane fade show active" id="list-first" role="tabpanel" aria-labelledby="list-first-list">
+            <p>biology is science of life. its name originated from the greek words bios, meaning life or living, and logos means studying. neither of which i have been doing recently</p>
+          </div>
+          <div class="tab-pane fade" id="list-second" role="tabpanel" aria-labelledby="list-second-list">
+            <p>am a single father of 0 please hire</p>
+          </div>
+          <div class="tab-pane fade" id="list-third" role="tabpanel" aria-labelledby="list-third-list">
+            <p>in nineth grade i built a powerpoint presentation that taught my classmates about zoroastrianism</p>
+          </div>
+          <div class="tab-pane fade" id="list-fourth" role="tabpanel" aria-labelledby="list-fourth-list">
+            <p> yes mom i know it's not mobile friendly</p>
+            <p>seriouslly tho im not done making this come back later </p>
+          </div>
+        </div>
 
       </div>
+
     </div>
   </div>
 

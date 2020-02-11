@@ -1,41 +1,45 @@
 :root {
-  --accent-color: #d50000;
+  --accent-color: #11c973;
   --inactive-color: #FFF;
-  --body-color: #6D8891;
+
+  --background-color: #15181a;
+  --body-color: #949799;
+
 }
 
 body {
   font-family: 'Montserrat', sans-serif;
-
   color: var(--body-color);
-
-  /*background color-related*/
-  background: #0f2027;
-  background: -webkit-linear-gradient(to right, #0f2027, #203a43);
-  background: linear-gradient(to right, #0f2027, #203a43);
+  background: var(--background-color);
 }
 
 h1 {
-  font-size: 26px;
+  font-size: 1.75em;
   text-transform: uppercase;
   letter-spacing: 0.1em;
+  font-weight: 500;
+  color: var(--inactive-color);
 }
 
 h2 {
-  font-size: 13px;
-  line-height: 12px;
+  font-size: 0.85em;
+  line-height: 0.75em;
 }
 
+
 .link {
-  font-size: 65px;
+  font-size: 4em;
   text-transform: uppercase;
-  font-weight: 200;
+  font-weight: 300;
   color: var(--inactive-color);
   line-height: 92%
 }
 
 .link-content {
   color: inherit;
+  padding-top: 1em;
+  margin: none;
+  border-radius: .75em;
 }
 
 a {
@@ -55,8 +59,14 @@ h2 a:hover {
 }
 
 .heading {
-  margin-top: 64px;
-  margin-bottom: 32px;
+  margin-top: 4em;
+  margin-bottom: 2.5em;
+  /*margin-bottom: 2.5em;
+  padding-bottom: .75em;
+  border-color: var(--accent-color);
+  border-bottom-style: solid;
+  border-bottom-width: .1em;
+  width: 20em;*/
 }
 
 /*
@@ -76,28 +86,33 @@ listgroup bootstrap override
 }
 
 .list-group-item-action:active {
-  color: var(--accent-color);
   background-color: inherit;
 }
 
 .list-group-item {
   position: relative;
   display: block;
-  padding: 0.75rem 1.25rem;
+  background-color: inherit;
+  border: none;
+  padding: 0;
+  /*padding: 0.75rem 1.25rem;
   margin-bottom: -1px;
   background-color: inherit;
   border: none;
   padding-top: 0px;
   padding-bottom: 0px;
   border-radius: 0px;
-  padding-left: 20px;
+  padding-left: 20px;*/
 }
 
 .list-group-item.active {
   z-index: 2;
   background-color: inherit;
   border-left: none;
+
+  color: var(--accent-color);
 }
 
-#list-tab {
+/*#list-tab {
     border-left: 5px solid var(--accent-color);
+  }*/
