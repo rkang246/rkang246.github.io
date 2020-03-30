@@ -6,12 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Robert Kang</title>
   <!-- CSS -->
-<link href="static/css/bootstrap.css" rel="stylesheet">
-<!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+  <link href="static/css/bootstrap.css" rel="stylesheet">
+  <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
   <link href="static/css/main.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
+  <script src="static/javascript/main.js"></script>
 </head>
 
 <body>
@@ -19,22 +20,23 @@
     <div class="row">
 
       <div class = "col-12">
-        <div class="heading animated fadeIn slower">
+        <div class="heading">
           <h1>Robert Kang</h1>
-          <h2 class="animated fadeIn slower delay-1s">computer science student</h2>
-          <h2 class="animated fadeIn slower delay-1s">university of michigan</h2>
-          <h2 class="animated fadeIn slower delay-1s">reading <strong><a href="https://mitpress.mit.edu/books/free-will" target="_blank">free will</a></strong> by mark balaguer</h2>
+          <h2>computer science student</h2>
+          <h2>university of michigan</h2>
+          <h2 class="text-cycle">reading <strong><a href="https://mitpress.mit.edu/books/free-will" target="_blank">free will</a></strong> by mark balaguer</h2>
+
         </div>
       </div>
-    <!-- listgroup and content-->
-      <div class="col-8 animated fadeIn slower delay-3s">
+
+      <div class="col-6">
+      <!-- listgroup and content-->
         <div class="list-group" id="list-tab" role="tablist">
-          <a class="list-group-item list-group-item-action active link" id="list-bio-first" data-toggle="tab" href="#list-first" role="tab" aria-controls="list-first">Bio</a>
+          <a class="list-group-item list-group-item-action link" id="list-bio-first" data-toggle="tab" href="#list-first" role="tab" aria-controls="list-first">Bio</a>
           <a class="list-group-item list-group-item-action link" id="list-second-list" data-toggle="tab" href="#list-second" role="tab" aria-controls="list-second">Work</a>
           <a class="list-group-item list-group-item-action link" id="list-third-list" data-toggle="tab" href="#list-third" role="tab" aria-controls="list-third">Projects</a>
           <a class="list-group-item list-group-item-action link" id="list-fourth-list" data-toggle="tab" href="#list-fourth" role="tab" aria-controls="list-fourth">Coursework</a>
         </div>
-
         <div class="contact">
           <a href="https://github.com/rkang246" target="_blank">github</a> /
           <a href="https://www.linkedin.com/in/robert-kang-54955a185/" target="_blank">linkedin</a> /
@@ -43,28 +45,44 @@
         </div>
       </div>
 
-      <div class="col-4 animated fadeIn slower delay-3s">
+      <div class="col-6">
         <div class="tab-content link-content" id="nav-tabContent">
-          <div class="tab-pane fade" id="list-landing" role="tabpanel" aria-labelledby="list-landing-list">
-            <p> am taking color scheme suggestions please dm serious business inquiries to https://www.farmersonly.com/profiles/robert_kang</p>
-            <p> or share a google docs with edit permissions and we can chat there </p>
-            <p> alternatively use the email down there</p>
+          <div class="tab-pane fade show active" id="list-landing" role="tabpanel" aria-labelledby="list-landing-list">
+            <!--Empty Landing-->
           </div>
-          <div class="tab-pane fade show active" id="list-first" role="tabpanel" aria-labelledby="list-first-list">
-            <p>biology is science of life. its name originated from the greek words bios, meaning life or living, and logos means studying. neither of which i have been doing recently</p>
+          <div class="tab-pane fade" id="list-first" role="tabpanel" aria-labelledby="list-first-list">
+            <h2>Hi, I'm Robert! </h2>
+            <p>I'm currently a first-year student studying computer science.
+              Despite my birthplace of Columbus, Ohio, I'm attending the <strong><a href="https://umich.edu/" target="_blank">University of Michigan, Online Campus</a></strong> (although I grew up in Albany, New York).</p>
+            <p>I'm currently a Research Assistant at <strong><a href="http://comp.social.gatech.edu/" target="_blank">comp.social</a></strong>, a lab that analyzes social media systems under Professor Eric Gilbert. I'm also a
+              Project Manager at <strong><a href="http://atlasdigital.org" target="_blank">Atlas Digital</a></strong>, a student-run tech consulting group that takes on pro-bono projects for local businesses, startups, and non-profits.
+              This summer, I'll be working as a Software Engineer Intern at <strong><a href="https://www.3m.com/" target="_blank">3M</a></strong>.</p>
+            <p>I can hold fluent conversations in English and Chinese, and if you give me a little time, I might be able to ask for directions to the nearest hotel in Russian.<p>
           </div>
+          <!--For work and projects, take a look at fan zhang-->
           <div class="tab-pane fade" id="list-second" role="tabpanel" aria-labelledby="list-second-list">
-            <p>am a single father of 0 please hire</p>
+            <p>tdb</p>
           </div>
           <div class="tab-pane fade" id="list-third" role="tabpanel" aria-labelledby="list-third-list">
-            <p>in nineth grade i built a powerpoint presentation that taught my classmates about zoroastrianism</p>
+            <p>tdb</p>
           </div>
           <div class="tab-pane fade" id="list-fourth" role="tabpanel" aria-labelledby="list-fourth-list">
-            <p> yes mom i know it's not mobile friendly</p>
-            <p>seriouslly tho im not done making this come back later </p>
+            <h2>Relevant Coursework:</h2>
+            <ul>
+              <li><strong>EECS 281</strong>  |  Data Structures and Algorithms</li>
+              ( C++ )
+              <li><strong>EECS 280</strong>  |  Intro Programming and Data Structures</li>
+              ( C++ )
+              <li><strong>EECS 201</strong>  |  Computer Science Pragmatics</li>
+              ( Bash, Git, Python, C++ )
+              <li><strong>EECS 203</strong>  |  Discrete Mathematics</li>
+              ( null )
+              <li><strong>ENGR 100</strong>  |  Microprocessors and Toys</li>
+              ( Assembly )
+            </ul>
+            <p>...and more to come!</p>
           </div>
         </div>
-
       </div>
 
     </div>

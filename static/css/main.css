@@ -1,10 +1,8 @@
 :root {
   --accent-color: #11c973;
   --inactive-color: #FFF;
-
   --background-color: #15181a;
   --body-color: #949799;
-
 }
 
 body {
@@ -26,11 +24,10 @@ h2 {
   line-height: 0.75em;
 }
 
-
 .link {
   font-size: 4em;
   text-transform: uppercase;
-  font-weight: 300;
+  font-weight: bold;
   color: var(--inactive-color);
   line-height: 92%
 }
@@ -72,7 +69,6 @@ h2 a:hover {
 /*
 listgroup bootstrap override
 */
-
 .list-group-item-action {
   width: 100%;
   color: var(--inactive-color);
@@ -82,7 +78,7 @@ listgroup bootstrap override
 .list-group-item-action:hover, .list-group-item-action:focus {
   color: var(--accent-color);
   text-decoration: none;
-  background-color:inherit;
+  background-color: inherit;
 }
 
 .list-group-item-action:active {
@@ -109,10 +105,77 @@ listgroup bootstrap override
   z-index: 2;
   background-color: inherit;
   border-left: none;
-
   color: var(--accent-color);
+}
+
+.tab-content {
+  color: var(--body-color);
+  font-size: 0.95em;
+  padding-left: 5em;
+}
+
+.tab-content strong {
+  font-weight: 600;
+  font-weight: bold;
+}
+
+.tab-content h2 {
+  font-size: 1.5em;
+  padding-bottom: 0.1em;
 }
 
 /*#list-tab {
     border-left: 5px solid var(--accent-color);
-  }*/
+}*/
+@-moz-keyframes fade-it {
+  0% {
+    opacity: 0
+  }
+
+  100% {
+    opacity: 1
+  }
+}
+
+@-webkit-keyframes fade-it {
+  0% {
+    opacity: 0
+  }
+
+  100% {
+    opacity: 1
+  }
+}
+
+@keyframes fade-it {
+  0% {
+    opacity: 0
+  }
+
+  100% {
+    opacity: 1
+  }
+}
+
+.js-fade-in-text-cycle {
+  animation-name: fade-it;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  -webkit-animation-name: fade-it;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-fill-mode: forwards
+}
+
+.text-cycle.js-block {
+  display: block
+}
+
+.text-cycle.js-hide {
+  display: none;
+  opacity: 0
+}
+
+.text-cycle {
+  display: block;
+  visibility: visible;
+}
