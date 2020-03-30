@@ -1,3 +1,18 @@
+var acc = document.getElementsByClassName("exp-accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("exp-active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  });
+}
+
 var words = (function(){
   var words = [
       'reading <strong><a href="https://mitpress.mit.edu/books/free-will" target="_blank">free will</a></strong> by mark balaguer',
@@ -6,6 +21,7 @@ var words = (function(){
       'listening to <strong><a href="https://crimejunkiepodcast.com/" target="_blank">crime junkie</a></strong>',
       'staying <strong>hydrated</strong>',
       'going on a <strong>run</strong>',
+      'managing <strong>student debt</strong>',
 
       ],
     el = document.querySelector('.text-cycle'),
@@ -76,3 +92,12 @@ var words = (function(){
 })();
 
 words.init();
+
+
+$('.panel-collapse').on('show.bs.collapse', function () {
+   $(this).siblings('.panel-heading').addClass('active');
+ });
+
+ $('.panel-collapse').on('hide.bs.collapse', function () {
+   $(this).siblings('.panel-heading').removeClass('active');
+ });

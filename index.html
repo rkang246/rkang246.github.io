@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- make mobile friendly and the fact that clicking off unhighlights list group -->
+<!-- Make Mobile Friendly! -->
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,32 +12,31 @@
   <link href="static/css/main.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-
   <script src="static/javascript/main.js"></script>
 </head>
 
 <body>
   <div class="container">
     <div class="row">
-
-      <div class = "col-12">
+      <!-- Main Header -->
+      <div class="col-12">
         <div class="heading">
           <h1>Robert Kang</h1>
           <h2>computer science student</h2>
           <h2>university of michigan</h2>
           <h2 class="text-cycle">reading <strong><a href="https://mitpress.mit.edu/books/free-will" target="_blank">free will</a></strong> by mark balaguer</h2>
-
         </div>
       </div>
 
       <div class="col-6">
-      <!-- listgroup and content-->
+        <!-- Listgroup Navbar -->
         <div class="list-group" id="list-tab" role="tablist">
           <a class="list-group-item list-group-item-action link" id="list-bio-first" data-toggle="tab" href="#list-first" role="tab" aria-controls="list-first">Bio</a>
-          <a class="list-group-item list-group-item-action link" id="list-second-list" data-toggle="tab" href="#list-second" role="tab" aria-controls="list-second">Work</a>
+          <a class="list-group-item list-group-item-action link" id="list-second-list" data-toggle="tab" href="#list-second" role="tab" aria-controls="list-second">Experience</a>
           <a class="list-group-item list-group-item-action link" id="list-third-list" data-toggle="tab" href="#list-third" role="tab" aria-controls="list-third">Projects</a>
           <a class="list-group-item list-group-item-action link" id="list-fourth-list" data-toggle="tab" href="#list-fourth" role="tab" aria-controls="list-fourth">Coursework</a>
         </div>
+        <!--Contact-->
         <div class="contact">
           <a href="https://github.com/rkang246" target="_blank">github</a> /
           <a href="https://www.linkedin.com/in/robert-kang-54955a185/" target="_blank">linkedin</a> /
@@ -46,39 +46,115 @@
       </div>
 
       <div class="col-6">
+        <!-- Listgroup Content -->
         <div class="tab-content link-content" id="nav-tabContent">
+          <!-- Landing (Empty Default) -->
           <div class="tab-pane fade show active" id="list-landing" role="tabpanel" aria-labelledby="list-landing-list">
-            <!--Empty Landing-->
           </div>
+          <!-- Bio -->
           <div class="tab-pane fade" id="list-first" role="tabpanel" aria-labelledby="list-first-list">
-            <h2>Hi, I'm Robert! </h2>
+            <h1>Hi, I'm Robert! </h1>
             <p>
               I'm a first-year student studying computer science.
               Despite my birthplace of Columbus, Ohio, I'm attending the <strong><a href="https://umich.edu/" target="_blank">University of Michigan, Online Campus</a></strong> (although I grew up in Albany, New York).
-              <br/><br/>
+              <br /><br />
               I'm currently a Research Assistant at <strong><a href="http://comp.social.gatech.edu/" target="_blank">comp.social</a></strong>, a lab that analyzes social media systems under Professor Eric Gilbert. I'm also a
               Project Manager at <strong><a href="http://atlasdigital.org" target="_blank">Atlas Digital</a></strong>, a student-run tech consulting group that does pro-bono work for local businesses, startups, and non-profits.
-              This summer, I'll be working as a Software Engineer Intern at <strong><a href="https://www.3m.com/" target="_blank">3M</a></strong>.
-              <br/><br/>
+              This summer, I'll be working as a Software Engineering Intern at <strong><a href="https://www.3m.com/" target="_blank">3M</a></strong>.
+              <br /><br />
               I can hold fluent conversations in English and Chinese, and if you give me a little time, I might be able to ask for directions to the nearest hotel in Russian.
-            <p>
+              <p>
           </div>
-          <!--For work and projects, take a look at fan zhang-->
+          <!-- Experience -->
           <div class="tab-pane fade" id="list-second" role="tabpanel" aria-labelledby="list-second-list">
-            <p>tdb</p>
+            <!-- Software Engineering Intern @ 3M -->
+            <div class="panel-entry">
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <div class="panel-title">
+                    <h1>
+                      <a class="accordion-anchor" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Software Engineering Intern<br/><strong>@ <a href="https://www.3m.com/" target="_blank">3M</a></strong>
+                      </a>
+                    </h1>
+                  </div>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
+                    <h3>Health Information Systems</h3>
+                    <h2>May 2020 - Present</h2>
+                    To be determined..?
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Research Assistant @ comp.social -->
+            <div class="panel-entry">
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                  <div class="panel-title">
+                    <h1>
+                      <a class="accordion-anchor" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                        Research Assistant<br/><strong>@ <a href="http://comp.social.gatech.edu/" target="_blank">comp.social</a></strong>
+                      </a>
+                    </h1>
+                  </div>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+                  <div class="panel-body">
+                    <h3>Crossmoderator Team</h3>
+                    <h2>Sept 2019 - Present</h2>
+                    To be written..
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
+                    tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
+                    lomo.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Project Manager @ Atlas Digital -->
+            <div class="panel-entry">
+              <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingThree">
+                    <div class="panel-title">
+                      <h1>
+                        <a class="accordion-anchor" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                          Project Manager<br/><strong>@ <a href="http://atlasdigital.org" target="_blank">Atlas Digital</a></strong>
+                        </a>
+                      </h1>
+                    </div>
+                  </div>
+                  <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+                    <div class="panel-body">
+                      <h3>Internal Project Team</h3>
+                      <h2>Sept 2019 - Present</h2>
+                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
+                      tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
+                      lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
+          <!-- Projects -->
           <div class="tab-pane fade" id="list-third" role="tabpanel" aria-labelledby="list-third-list">
             <p>tdb</p>
           </div>
+          <!-- Coursework -->
           <div class="tab-pane fade" id="list-fourth" role="tabpanel" aria-labelledby="list-fourth-list">
-            <h1>University of Michigan<span>Ann Arbor, MI</span></h1>
-            <h3>Computer Science, B.S.E.<span>2019-2023</span></h3>
+            <div class="entry-header">
+              <h1>University of Michigan<span>Ann Arbor, MI</span></h1>
+              <h3>Computer Science, B.S.E.<span>2019-2023</span></h3>
+            </div>
             <ul>
-              <li><strong>EECS 281</strong>  |  Data Structures and Algorithms</li>
-              <li><strong>EECS 280</strong>  |  Intro Programming and Data Structures</li>
-              <li><strong>EECS 201</strong>  |  Computer Science Pragmatics</li>
-              <li><strong>EECS 203</strong>  |  Discrete Mathematics</li>
-              <li><strong>ENGR 100</strong>  |  Microprocessors and Toys</li>
+              <li><strong>EECS 281</strong> | Data Structures and Algorithms</li>
+              <li><strong>EECS 280</strong> | Intro Programming and Data Structures</li>
+              <li><strong>EECS 201</strong> | Computer Science Pragmatics</li>
+              <li><strong>EECS 203</strong> | Discrete Mathematics</li>
+              <li><strong>ENGR 100</strong> | Microprocessors and Toys</li>
             </ul>
             <div class="skill-container">
               <div class="skill">C++</div>
@@ -91,17 +167,18 @@
             </div>
             <p>...and more to come!</p>
           </div>
-        </div>
+
+        </div> <!-- Listgroup Content-->
       </div>
 
     </div>
   </div>
 
-
-<!-- Scripts -->
+  <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="static/javascript/main.js"></script>
 </body>
+
 </html>
