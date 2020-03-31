@@ -34,7 +34,6 @@ h2 {
 
 .link-content {
   color: inherit;
-  padding-top: 1em;
   margin: none;
   border-radius: .75em;
 }
@@ -56,7 +55,7 @@ h2 a:hover {
 }
 
 .heading {
-  margin-top: 4em;
+  margin-top: 3em;
   margin-bottom: 2.5em;
   /*margin-bottom: 2.5em;
   padding-bottom: .75em;
@@ -315,6 +314,12 @@ Experience accordion
 
 .panel-title strong {
   font-weight: bolder;
+}
+
+.panel-title strong p {
+  font-color: var(--accent-color);
+  font-size: 1.7em;
+  display: inline;
 }
 
 .panel-title strong a {
