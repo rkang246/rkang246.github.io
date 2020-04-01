@@ -1,8 +1,16 @@
 :root {
+  /*Dark Mode (Default)*/
   --accent-color: #11c973;
   --inactive-color: #FFF;
   --background-color: #15181a;
   --body-color: #949799;
+
+  /*Light Mode (Key for JS)*/
+  /*--accent-color: #11c973;*/
+  /*--inactive-color: #444452;*/
+  /*--background-color: #FFF;*/
+  /*--body-color: #444452;*/
+
 }
 
 body {
@@ -57,12 +65,6 @@ h2 a:hover {
 .heading {
   margin-top: 3em;
   margin-bottom: 2.5em;
-  /*margin-bottom: 2.5em;
-  padding-bottom: .75em;
-  border-color: var(--accent-color);
-  border-bottom-style: solid;
-  border-bottom-width: .1em;
-  width: 20em;*/
 }
 
 /*
@@ -90,14 +92,6 @@ listgroup bootstrap override
   background-color: inherit;
   border: none;
   padding: 0;
-  /*padding: 0.75rem 1.25rem;
-  margin-bottom: -1px;
-  background-color: inherit;
-  border: none;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  border-radius: 0px;
-  padding-left: 20px;*/
 }
 
 .list-group-item.active {
@@ -105,6 +99,10 @@ listgroup bootstrap override
   background-color: inherit;
   border-left: none;
   color: var(--accent-color);
+}
+
+.tab-pane {
+  margin-bottom: 5em;
 }
 
 .tab-content {
@@ -171,6 +169,9 @@ listgroup bootstrap override
   overflow-y: scroll;
 }
 
+/*
+Coursework
+*/
 .entry-header {
   padding-bottom: 0.5em;
   /*border-bottom: 0.01em solid var(--accent-color);*/
@@ -210,10 +211,6 @@ body ::-webkit-scrollbar-track {
   margin-top: 0.5em;
   font-size: 0.8em;
 }
-
-/*#list-tab {
-    border-left: 5px solid var(--accent-color);
-}*/
 
 /*
 Tagline Cycler
@@ -314,15 +311,12 @@ Experience accordion
 
 .panel-title strong {
   font-weight: bolder;
+  font-size: 1.7em;
 }
 
 .panel-title strong p {
   font-color: var(--accent-color);
-  font-size: 1.7em;
   display: inline;
-}
-
-.panel-title strong a {
   font-size: 1.5em;
 }
 
@@ -345,8 +339,81 @@ Experience accordion
   font-size: 0.9em;
 }
 
+.panel-body h3 a:hover {
+  color: inherit;
+  text-decoration-style: dotted;
+  text-decoration-skip-ink: none;
+  text-decoration-line: underline;
+}
+
 .panel-entry {
   padding: 1em;
   margin-bottom: 0.5em;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 1, 0.15), 0 2px 10px 0 rgba(0, 0, 1,.15);
+}
+
+
+
+/*
+Light/Dark Mode
+@/* TODO: Finish Light/Dark Mode */
+.light-switch {
+  position: relative;
+  margin-top: 3em;
+  display: inline-block;
+  width: 2.813em;
+  height: 1.563em;
+}
+
+.light-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #3E78B2;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.18em;
+  width: 1.18em;
+  left: 0.2em;
+  bottom: 0.2em;
+  background-color: var(--inactive-color);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #CCC;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #CCC;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(1.3em);
+  -ms-transform: translateX(1.3em);
+  transform: translateX(1.3em);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 2.125em;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Make Mobile Friendly! -->
+<!-- @TODO: Make Mobile Friendly! -->
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Robert Kang</title>
-  <!-- ****** faviconit.com favicons ****** -->
+  <!-- Favicons -->
 	<link rel="shortcut icon" href="static/images/favicon/favicon.ico">
 	<link rel="icon" sizes="16x16 32x32 64x64" href="static/images/favicon/favicon.ico">
 	<link rel="icon" type="image/png" sizes="196x196" href="static/images/favicon/favicon-192.png">
@@ -27,14 +27,10 @@
 	<meta name="msapplication-TileColor" content="#FFFFFF">
 	<meta name="msapplication-TileImage" content="static/images/favicon/favicon-144.png">
 	<meta name="msapplication-config" content="static/images/favicon/browserconfig.xml">
-	<!-- ****** faviconit.com favicons ****** -->
   <!-- CSS -->
   <link href="static/css/bootstrap.css" rel="stylesheet">
-  <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
   <link href="static/css/main.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-  <script src="static/javascript/main.js"></script>
 </head>
 
 <body>
@@ -48,8 +44,20 @@
           <h2>university of michigan</h2>
           <h2 class="text-cycle">reading <strong><a href="https://mitpress.mit.edu/books/free-will" target="_blank">free will</a></strong> by mark balaguer</h2>
         </div>
+      </div> <!-- Main Header -->
+      <!-- Dark/Light Mode Switch -->
+      <!--
+      @TODO Dark/Light Mode
+            Switch main header to col-11
+      <div class="col-1">
+        <label class="light-switch">
+          <input id="light-switch" type="checkbox">
+          <span class="slider round"></span>
+        </label>
       </div>
+      -->
 
+      <!-- Main Content -->
       <div class="col-6">
         <!-- Listgroup Navbar -->
         <div class="list-group" id="list-tab" role="tablist">
@@ -57,22 +65,22 @@
           <a class="list-group-item list-group-item-action link" id="list-second-list" data-toggle="tab" href="#list-second" role="tab" aria-controls="list-second">Experience</a>
           <a class="list-group-item list-group-item-action link" id="list-third-list" data-toggle="tab" href="#list-third" role="tab" aria-controls="list-third">Projects</a>
           <a class="list-group-item list-group-item-action link" id="list-fourth-list" data-toggle="tab" href="#list-fourth" role="tab" aria-controls="list-fourth">Coursework</a>
-        </div>
-        <!--Contact-->
+        </div> <!-- Listgroup Navbar -->
+        <!-- Contact Footer -->
         <div class="contact">
           <a href="https://github.com/rkang246" target="_blank">github</a> /
           <a href="https://www.linkedin.com/in/robert-kang-54955a185/" target="_blank">linkedin</a> /
           <a href="files/resume.pdf" target="_blank">resume</a> /
           <a href="mailto:rqkang@umich.edu">rqkang@umich.edu</a>
-        </div>
+        </div> <!--Listgroup Navbar -->
       </div>
 
       <div class="col-6">
         <!-- Listgroup Content -->
         <div class="tab-content link-content" id="nav-tabContent">
-          <!-- Landing (Empty Default) -->
+          <!-- Landing (empty by default) -->
           <div class="tab-pane fade show active" id="list-landing" role="tabpanel" aria-labelledby="list-landing-list">
-          </div>
+          </div> <!-- Landing -->
           <!-- Bio -->
           <div class="tab-pane fade" id="list-first" role="tabpanel" aria-labelledby="list-first-list">
             <h1>Hi, I'm Robert! </h1>
@@ -86,7 +94,7 @@
               <br /><br />
               I can hold fluent conversations in English and Chinese, and if you give me a little time, I might be able to ask for directions to the nearest hotel in Russian.
               <p>
-          </div>
+          </div> <!-- Bio -->
           <!-- Experience -->
           <div class="tab-pane fade" id="list-second" role="tabpanel" aria-labelledby="list-second-list">
             <!-- Software Engineering Intern @ 3M -->
@@ -96,20 +104,21 @@
                   <div class="panel-title">
                     <h1>
                       <a class="accordion-anchor" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Software Engineering Intern<br/><strong><p>@</p> <a href="https://www.3m.com/" target="_blank">3M</a></strong>
+                        Software Engineering Intern<br/><strong><p>@ 3M</p></strong>
                       </a>
                     </h1>
                   </div>
                 </div>
                 <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                   <div class="panel-body">
-                    <h3>Health Information Systems</h3>
+                    <h3><a href="https://www.3m.com/3M/en_US/health-information-systems-us/" target="_blank">Health Information Systems</a></h3>
                     <h2>May 2020 - Present</h2>
-                    To be determined..?
+                    Not yet started.<br/><br/>
+                    To be determined...
                   </div>
                 </div>
               </div>
-            </div>
+            </div> <!-- Software Engineering Intern @ 3M -->
             <!-- Research Assistant @ comp.social -->
             <div class="panel-entry">
               <div class="panel panel-default">
@@ -117,14 +126,14 @@
                   <div class="panel-title">
                     <h1>
                       <a class="accordion-anchor" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                        Research Assistant<br/><strong><p>@</p> <a href="http://comp.social.gatech.edu/" target="_blank">comp.social</a></strong>
+                        Research Assistant<br/><strong><p>@ comp.social</p></strong>
                       </a>
                     </h1>
                   </div>
                 </div>
                 <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
                   <div class="panel-body">
-                    <h3>Crossmoderator Team</h3>
+                    <h3><a href="http://crossmod.ml" target="_blank">CrossModerator Team</a></h3>
                     <h2>Sept 2019 - Present</h2>
                     To be written..
                     Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
@@ -133,7 +142,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> <!-- Research Assistant @comp.social -->
             <!-- Project Manager @ Atlas Digital -->
             <div class="panel-entry">
               <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
@@ -142,14 +151,14 @@
                     <div class="panel-title">
                       <h1>
                         <a class="accordion-anchor" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                          Project Manager<br/><strong><p>@</p> <a href="http://atlasdigital.org" target="_blank">Atlas Digital</a></strong>
+                          Project Manager<br/><strong><p>@ Atlas Digital</p></strong>
                         </a>
                       </h1>
                     </div>
                   </div>
                   <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
                     <div class="panel-body">
-                      <h3>Internal Project Team</h3>
+                      <h3><a href="http://atlasdigital.org" target="_blank">atlasdigital.org Team</a></h3>
                       <h2>Sept 2019 - Present</h2>
                       Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
                       tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
@@ -158,13 +167,12 @@
                   </div>
                 </div>
               </div>
-            </div>
-
-          </div>
+            </div> <!-- Project Manager @ Atlas Digital -->
+          </div> <!-- Experience -->
           <!-- Projects -->
           <div class="tab-pane fade" id="list-third" role="tabpanel" aria-labelledby="list-third-list">
             <p>tdb</p>
-          </div>
+          </div> <!-- Projects -->
           <!-- Coursework -->
           <div class="tab-pane fade" id="list-fourth" role="tabpanel" aria-labelledby="list-fourth-list">
             <div class="entry-header">
@@ -188,13 +196,13 @@
               <div class="skill">Assembly</div>
             </div>
             <p>...and more to come!</p>
-          </div>
+          </div> <!-- Coursework -->
 
         </div> <!-- Listgroup Content-->
-      </div>
+      </div> <!-- Main Content -->
 
-    </div>
-  </div>
+    </div> <!-- .row -->
+  </div> <!-- .container -->
 
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
