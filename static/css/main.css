@@ -164,7 +164,7 @@ listgroup bootstrap override
   margin-top: 1em;
   padding-top: 0.5em;
   padding-left: 2em;
-  height: 7.5em;
+  height: 9em;
   overflow: hidden;
   overflow-y: scroll;
 }
@@ -173,7 +173,7 @@ listgroup bootstrap override
 Coursework
 */
 .entry-header {
-  padding-bottom: 0.5em;
+  /*padding-bottom: 0.5em;*/
   /*border-bottom: 0.01em solid var(--accent-color);*/
 }
 
@@ -195,7 +195,7 @@ body ::-webkit-scrollbar-track {
 }
 
 .skill-container {
-  margin-bottom: 2em;
+  margin-bottom: 1.5em;
 }
 .skill {
   color: var(--inactive-color);
