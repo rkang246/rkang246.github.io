@@ -6,10 +6,10 @@
   --body-color: #949799;
 
   /*Light Mode (Key for JS)*/
-  /*--accent-color: #11c973;*/
-  /*--inactive-color: #444452;*/
-  /*--background-color: #FFF;*/
-  /*--body-color: #444452;*/
+  /*--accent-color: #009640;*/
+  /*--inactive-color: #353535;*/
+  /*--background-color: #f7f7f7;*/
+  /*--body-color: #6A6A6A;*/
 
 }
 
@@ -17,6 +17,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   color: var(--body-color);
   background: var(--background-color);
+  height: 100%;
 }
 
 h1 {
@@ -30,6 +31,10 @@ h1 {
 h2 {
   font-size: 0.85em;
   line-height: 0.75em;
+}
+
+.container {
+
 }
 
 .link {
@@ -65,6 +70,10 @@ h2 a:hover {
 .heading {
   margin-top: 3em;
   margin-bottom: 2.5em;
+}
+
+.heading h1 {
+  font-weight: 800;
 }
 
 /*
@@ -416,4 +425,41 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+
+/* Footer */
+.footer-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3.3em;
+}
+
+#footer {
+	background: inherit;
+	color: var(--body-color);
+  text-align: left;
+}
+
+#footer .copyright {
+	font-size: 0.8em;
+	line-height: 1.5em;
+}
+
+
+#footer .copyright li {
+	display: inline-block;
+	margin-left: 1.250em;
+}
+
+#footer .copyright li:first-child {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.active-light {
+
 }

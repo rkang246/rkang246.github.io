@@ -118,3 +118,21 @@ words.init();
    }
  }
  */
+
+$("#light-switch").click(function(){
+  if ($(this).hasClass("active-light")) { //lights on, turn em off
+    $(this).html("lights on.");
+    document.documentElement.style.setProperty('--accent-color', '#11c973');
+    document.documentElement.style.setProperty('--inactive-color', '#FFF');
+    document.documentElement.style.setProperty('--background-color', '#15181a');
+    document.documentElement.style.setProperty('--body-color', '#949799');
+  }
+  else { //lights off, turn em on
+    $(this).html("lights off.");
+      document.documentElement.style.setProperty('--accent-color', '#009640');
+    document.documentElement.style.setProperty('--inactive-color', '#353535');
+    document.documentElement.style.setProperty('--background-color', '#f7f7f7');
+    document.documentElement.style.setProperty('--body-color', '#6A6A6A');
+  }
+   $(this).toggleClass("active-light");
+});
