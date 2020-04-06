@@ -129,8 +129,8 @@ $("#light-switch").click(function(){
   }
   else { //lights off, turn em on
     $(this).html("lights off.");
-      document.documentElement.style.setProperty('--accent-color', '#009640');
-    document.documentElement.style.setProperty('--inactive-color', '#353535');
+    document.documentElement.style.setProperty('--accent-color', '#009640');
+    document.documentElement.style.setProperty('--inactive-color', '#0e1111');
     document.documentElement.style.setProperty('--background-color', '#f7f7f7');
     document.documentElement.style.setProperty('--body-color', '#6A6A6A');
   }

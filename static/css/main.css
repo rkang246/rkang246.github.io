@@ -7,7 +7,7 @@
 
   /*Light Mode (Key for JS)*/
   /*--accent-color: #009640;*/
-  /*--inactive-color: #353535;*/
+  /*--inactive-color: #0e1111;*/
   /*--background-color: #f7f7f7;*/
   /*--body-color: #6A6A6A;*/
 
@@ -140,7 +140,7 @@ listgroup bootstrap override
 
 .tab-content h1 span {
   letter-spacing: 0.05em;
-  color: var(--body-color);
+  /*color: var(--body-color);*/
   font-weight: bolder;
   font-size: 0.95em;
   float: right;
@@ -153,7 +153,7 @@ listgroup bootstrap override
 
 .tab-content h3 {
   font-size: 1em;
-  color: var(--inactive-color);
+  color: var(--body-color);
   text-transform: uppercase;
 }
 
@@ -297,10 +297,10 @@ Experience accordion
 }
 
 .panel-heading:hover  .accordion-anchor:before, .panel-heading.active .accordion-anchor:before {
-   content: "v";
-   float: right;
-   transition: all 0.5s;
-   margin-top: 0.6em;
+  content: "v";
+  float: right;
+  transition: all 0.5s;
+  margin-top: 0.6em;
 }
 
 .panel-title a:hover {
@@ -434,7 +434,7 @@ input:checked + .slider:before {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 3.3em;
+  height: 3em;
 }
 
 #footer {
@@ -458,6 +458,19 @@ input:checked + .slider:before {
 	margin: 0;
 	padding: 0;
 	border: 0;
+}
+
+#footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-container span {
+  font-size: 0.85em;
+  letter-spacing: 0.05em;
+}
+
+.switch-theme {
+  font-weight: 900;
 }
 
 .active-light {
