@@ -14,7 +14,9 @@ Tagline Cycler
 */
 var words = (function(){
   var words = [
+      'listening to <strong>chopin</strong>',
       'reading <strong><a href="https://mitpress.mit.edu/books/free-will" target="_blank">free will</a></strong> by mark balaguer',
+      'playing <strong><a href="http://adarkroom.doublespeakgames.com/" target="_blank">a dark room</a></strong> by michael townsend',
       'studying <strong>avl trees</strong>',
       'staying <strong>quarantined</strong> from covid-19',
       'listening to <strong><a href="https://crimejunkiepodcast.com/" target="_blank">crime junkie</a></strong>',
@@ -24,6 +26,11 @@ var words = (function(){
       'making this site <strong>mobile friendly</strong>',
       'figuring out <strong>responsive</strong> design',
       'attending <strong>office hours</strong> on zoom',
+      'discovering that the <strong>real treasure</strong> was the <strong>friends</strong> we made along the way',
+      'practicing <strong>Russian</strong> conjugation',
+      'thinking up of more inane <strong>taglines</strong> to put here',
+      'practicing <strong>sarcasm</strong> and <strong>sharp wit</strong>',
+      'lamenting that 90% of time building this website has been thinking of these taglines',
 
       ],
     el = document.querySelector('.text-cycle'),
