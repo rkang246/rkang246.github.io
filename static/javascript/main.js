@@ -28,9 +28,8 @@ var words = (function(){
       'attending <strong>office hours</strong> on zoom',
       'discovering that the <strong>real treasure</strong> was the <strong>friends</strong> we made along the way',
       'practicing <strong>Russian</strong> conjugation',
-      'thinking up of more inane <strong>taglines</strong> to put here',
+      'thinking up of more <strong>inane taglines</strong> to put here',
       'practicing <strong>sarcasm</strong> and <strong>sharp wit</strong>',
-      'lamenting that 90% of time building this website has been thinking of these taglines',
 
       ],
     el = document.querySelector('.text-cycle'),

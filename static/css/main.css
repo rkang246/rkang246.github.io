@@ -331,27 +331,33 @@ Experience accordion
 
 .panel-body {
   font-size: 1.1em;
+  height: 20em;
+  overflow: hidden;
+  overflow-y: scroll;
+  padding-right: 1em;
 }
 
-.panel-body h2 {
+.xp-panel-heading {
+
+}
+
+.xp-panel-heading h2 {
   font-weight: normal;
   color: var(--body-color);
   line-height: 0.1em;
-  padding-bottom: 1em;
-  font-size: 0.9em;
+  padding-bottom: 0.5em;
+  font-size: 1em;
 }
 
-.panel-body h3 {
-  font-weight: bold;
+.xp-panel-heading h3 {
+  font-weight: 600;
   letter-spacing: 0.05em;
   color: var(--body-color);
-  font-size: 0.9em;
+  font-size: 1em;
 }
 
-.panel-body h3 a:hover {
+.xp-panel-heading h3 a:hover {
   color: inherit;
-  text-decoration-style: dotted;
-  text-decoration-skip-ink: none;
   text-decoration-line: underline;
 }
 
@@ -475,4 +481,10 @@ input:checked + .slider:before {
 
 .active-light {
 
+}
+
+.content-container {
+  height: 10em !important;
+  overflow: hidden !important;
+  overflow-y: scroll !important;
 }
