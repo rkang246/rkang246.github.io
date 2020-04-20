@@ -13,6 +13,8 @@
 
 }
 
+
+
 body {
   font-family: 'Montserrat', sans-serif;
   color: var(--body-color);
@@ -33,9 +35,6 @@ h2 {
   line-height: 0.75em;
 }
 
-.container {
-
-}
 
 .link {
   font-size: 4em;
@@ -173,9 +172,9 @@ listgroup bootstrap override
   margin-top: 1em;
   padding-top: 0.5em;
   padding-left: 2em;
-  height: 9em;
+  /*height: 9em;
   overflow: hidden;
-  overflow-y: scroll;
+  overflow-y: scroll;*/
 }
 
 /*
@@ -331,22 +330,29 @@ Experience accordion
 
 .panel-body {
   font-size: 1.1em;
+  
   height: 20em;
   overflow: hidden;
   overflow-y: scroll;
+
   padding-right: 1em;
+  margin-top: 2em;
+}
+
+.panel-body p {
+  margin-bottom: 0.5em;
 }
 
 .xp-panel-heading {
-
 }
 
 .xp-panel-heading h2 {
   font-weight: normal;
   color: var(--body-color);
   line-height: 0.1em;
-  padding-bottom: 0.5em;
+  margin-bottom: 0.5em;
   font-size: 1em;
+
 }
 
 .xp-panel-heading h3 {
@@ -368,10 +374,9 @@ Experience accordion
 }
 
 
-
 /*
 Light/Dark Mode
-@/* TODO: Finish Light/Dark Mode */
+*/
 .light-switch {
   position: relative;
   margin-top: 3em;
@@ -433,7 +438,9 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-
+.header-nav-container {
+  position: absolute;
+}
 /* Footer */
 .footer-container {
   position: fixed;
@@ -487,4 +494,18 @@ input:checked + .slider:before {
   height: 10em !important;
   overflow: hidden !important;
   overflow-y: scroll !important;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 90%;
+  }
+}
+
+.container2 {
+  padding-top: 11em;
+}
+
+.nav-head-container {
+  position: fixed;
 }

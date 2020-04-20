@@ -39,47 +39,26 @@
   <div class="container">
     <div class="row">
       <!-- Main Header -->
-      <div class="col-12">
+      <div class="nav-head-container col-6">
         <div class="heading">
           <h1>Robert Kang</h1>
           <h2>computer science student</h2>
           <h2>university of michigan</h2>
           <h2 class="text-cycle">what am i up to?</h2>
         </div>
+          <!-- Listgroup Navbar -->
+          <nav class="list-group" id="list-tab" role="tablist">
+            <a class="list-group-item list-group-item-action link" id="list-bio-first" data-toggle="tab" href="#list-first" role="tab" aria-controls="list-first">Bio</a>
+            <a class="list-group-item list-group-item-action link" id="list-second-list" data-toggle="tab" href="#list-second" role="tab" aria-controls="list-second">Experience</a>
+            <a class="list-group-item list-group-item-action link" id="list-third-list" data-toggle="tab" href="#list-third" role="tab" aria-controls="list-third">Projects</a>
+            <a class="list-group-item list-group-item-action link" id="list-fourth-list" data-toggle="tab" href="#list-fourth" role="tab" aria-controls="list-fourth">Coursework</a>
+          </nav> <!-- Listgroup Navbar -->
       </div> <!-- Main Header -->
-      <!-- Dark/Light Mode Switch -->
-      <!--
-      @TODO Dark/Light Mode
-            Switch main header to col-11
-      <div class="col-1">
-        <label class="light-switch">
-          <input id="light-switch" type="checkbox">
-          <span class="slider round"></span>
-        </label>
-      </div>
-      -->
 
       <!-- Main Content -->
-      <div class="col-6">
-        <!-- Listgroup Navbar -->
-        <nav class="list-group" id="list-tab" role="tablist">
-          <a class="list-group-item list-group-item-action link" id="list-bio-first" data-toggle="tab" href="#list-first" role="tab" aria-controls="list-first">Bio</a>
-          <a class="list-group-item list-group-item-action link" id="list-second-list" data-toggle="tab" href="#list-second" role="tab" aria-controls="list-second">Experience</a>
-          <a class="list-group-item list-group-item-action link" id="list-third-list" data-toggle="tab" href="#list-third" role="tab" aria-controls="list-third">Projects</a>
-          <a class="list-group-item list-group-item-action link" id="list-fourth-list" data-toggle="tab" href="#list-fourth" role="tab" aria-controls="list-fourth">Coursework</a>
-        </nav> <!-- Listgroup Navbar -->
-        <!-- Contact Footer -->
-        <!--
-        <div class="contact">
-          <a href="https://github.com/rkang246" target="_blank">github</a> /
-          <a href="https://www.linkedin.com/in/robert-kang-54955a185/" target="_blank">linkedin</a> /
-          <a href="files/resume.pdf" target="_blank">resume</a> /
-          <a href="mailto:rqkang@umich.edu">rqkang@umich.edu</a>
-        </div> --><!--Contact Footer -->
-      </div>
 
 
-      <div class="col-6">
+      <div class="container2 col-6 offset-6">
         <!-- Listgroup Content -->
         <div class="tab-content link-content" id="nav-tabContent">
           <!-- Landing (empty by default) -->
@@ -142,13 +121,18 @@
                       <h2>Sept 2019 - Present</h2>
                     </div>
                     <div class="panel-body">
-                        <strong><a href="https://www.cc.gatech.edu/~eshwar3/uploads/3/8/0/4/38043045/eshwar-crossmod-cscw2019.pdf" target="_blank">Crossmoderator</a></strong>, or Crossmod for short, is a Reddit moderation bot which detects toxic content through machine learning. Crossmod is intended as a supplement to current moderation tools which rely on matching regular expressions and are unable to detect more subtle personal attacks or racist remarks that don't explicity contain toxic keywords.
-                        <br/><br/>
-                        Our research team recently deployed Crossmod to <strong><a href="https://www.reddit.com/r/Futurology/about/moderators/?after=1945167462" target="_blank">r/Futurology</a></strong>, a subreddit with over 14 million users. We are studying Crossmod's accuracy and precision and plan to refine Crossmod's machine learning models based on its real-time moderation decisions on the subreddit.
-                        <br/><br>
-                        In order make Crossmod more scalable, I deployed its backend of 160 gigabytes of FastText machine learning models to a cloud-based<strong><a href="https://ceshwar.github.io/crossmod/crossmod/api/" target="_blank"> RESTful Flask API</a></strong>. The API also allows Crossmod's backend to be utilized more generally as a public toxicity detection service. A demo can be found <strong><a href="http://crossmod.ml/client/" target="_blank">here</a></strong>. Crossmod's API has been stress tested and optimized to handle an upper bound of 4000 requests of 10 comments per second (40,000 comments per second). We are currently refactoring Crossmod to switch its backend to the API. If you would like access to an API key, feel free to contact me.
-                        <br/><br/>
-                        In the future, we hope to release Crossmod as an <strong><a href="https://github.com/ceshwar/crossmod" target="_blank">open-source project</a></strong>.
+                        <p>
+                          <strong><a href="https://www.cc.gatech.edu/~eshwar3/uploads/3/8/0/4/38043045/eshwar-crossmod-cscw2019.pdf" target="_blank">Crossmoderator</a></strong>, or Crossmod for short, is a Reddit moderation bot which detects toxic content through machine learning. Crossmod is intended as a supplement to current moderation tools which rely on matching regular expressions and are unable to detect more subtle personal attacks or racist remarks that don't explicity contain toxic keywords.
+                        </p>
+                        <p>
+                          Our research team recently deployed Crossmod to <strong><a href="https://www.reddit.com/r/Futurology/about/moderators/?after=1945167462" target="_blank">r/Futurology</a></strong>, a subreddit with over 14 million users. We are studying Crossmod's accuracy and precision and plan to refine Crossmod's machine learning models based on its real-time moderation decisions on the subreddit.
+                        </p>
+                        <p>
+                          In order make Crossmod more scalable, I deployed its backend of 160 gigabytes of FastText machine learning models to a cloud-based<strong><a href="https://ceshwar.github.io/crossmod/crossmod/api/" target="_blank"> RESTful Flask API</a></strong>. The API also allows Crossmod's backend to be utilized more generally as a public toxicity detection service. A demo can be found <strong><a href="http://crossmod.ml/client/" target="_blank">here</a></strong>. Crossmod's API has been stress tested and optimized to handle an upper bound of 4000 requests of 10 comments per second (40,000 comments per second). We are currently refactoring Crossmod to switch its backend to the API. If you would like access to an API key, feel free to contact me.
+                        </p>
+                        <p>
+                          In the future, we hope to release Crossmod as an <strong><a href="https://github.com/ceshwar/crossmod" target="_blank">open-source project</a></strong>.
+                        </p>
                     </div>
                 </div>
               </div>
