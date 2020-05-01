@@ -5,15 +5,12 @@
   --background-color: #15181a;
   --body-color: #949799;
 
-  /*Light Mode (Key for JS)*/
+  /*Light Mode (Reference for JS)*/
   /*--accent-color: #009640;*/
   /*--inactive-color: #0e1111;*/
   /*--background-color: #f7f7f7;*/
   /*--body-color: #6A6A6A;*/
-
 }
-
-
 
 body {
   font-family: 'Montserrat', sans-serif;
@@ -33,21 +30,6 @@ h1 {
 h2 {
   font-size: 0.85em;
   line-height: 0.75em;
-}
-
-
-.link {
-  font-size: 4em;
-  text-transform: uppercase;
-  font-weight: bold;
-  color: var(--inactive-color);
-  line-height: 92%
-}
-
-.link-content {
-  color: inherit;
-  margin: none;
-  border-radius: .75em;
 }
 
 a {
@@ -73,6 +55,23 @@ h2 a:hover {
 
 .heading h1 {
   font-weight: 800;
+}
+
+/*
+Listgroup Navbar Links
+*/
+.link {
+  font-size: 4em;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--inactive-color);
+  line-height: 92%
+}
+
+.link-content {
+  color: inherit;
+  margin: none;
+  border-radius: .75em;
 }
 
 /*
@@ -109,6 +108,9 @@ listgroup bootstrap override
   color: var(--accent-color);
 }
 
+/*
+Site Content
+*/
 .tab-pane {
   margin-bottom: 5em;
 }
@@ -330,7 +332,7 @@ Experience accordion
 
 .panel-body {
   font-size: 1.1em;
-  
+
   height: 20em;
   overflow: hidden;
   overflow-y: scroll;
@@ -441,13 +443,19 @@ input:checked + .slider:before {
 .header-nav-container {
   position: absolute;
 }
-/* Footer */
+
+/*
+Footer
+*/
 .footer-container {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   height: 3em;
+  padding-top: 1em;
+  opacity: 50%;
+  z-index: 1;
 }
 
 #footer {
@@ -496,16 +504,49 @@ input:checked + .slider:before {
   overflow-y: scroll !important;
 }
 
-@media (min-width: 1200px) {
-  .container {
-    max-width: 90%;
-  }
-}
-
 .container2 {
   padding-top: 11em;
 }
 
-.nav-head-container {
-  position: fixed;
+@media only screen and (max-width: 991px) {
+  body {
+    text-align: justify;
+  }
+  .list-group {
+    display: none;
+  }
+
+  .container2 {
+    position: relative;
+    padding-top: 7em;
+    z-index: 2
+  }
+
+  .nav-head-container {
+    position: fixed;
+    background: var(--background-color);
+    z-index: 10;
+  }
+
+  .container2.col-6, .nav-head-container.col-6 {
+    -ms-flex: 0 0 100% !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+
+
+  .tab-pane {
+    display: block !important;
+    opacity: 1 !important;
+  }
+
+  .tab-content {
+    padding-left: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 90%;
+  }
 }

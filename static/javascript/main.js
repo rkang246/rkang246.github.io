@@ -9,6 +9,7 @@ $('.panel-collapse').on('show.bs.collapse', function () {
    $(this).siblings('.panel-heading').removeClass('active');
  });
 
+
 /*
 Tagline Cycler
 */
@@ -102,29 +103,9 @@ var words = (function(){
 words.init();
 
 
-
-/* @TODO Light Switch
- function lightSwitch() {
-   // Get the checkbox
-   var checkBox = document.getElementById("light-switch");
-
-
-   if (checkBox.checked == false) { //Light Mode
-     console.log("light");
-     document.documentElement.style.setProperty('--accent-color', '#11c973');
-     document.documentElement.style.setProperty('--inactive-color', '#444452');
-     document.documentElement.style.setProperty('--background-color', '#FFF');
-     document.documentElement.style.setProperty('--body-color', '#444452');
-   } else { //Dark Mode
-     console.log("dark");
-     document.documentElement.style.setProperty('--accent-color', '#11c973');
-     document.documentElement.style.setProperty('--inactive-color', '#FFF');
-     document.documentElement.style.setProperty('--background-color', '#15181a');
-     document.documentElement.style.setProperty('--body-color', '#949799');
-   }
- }
- */
-
+/*
+Light Switch
+*/
 $("#light-switch").click(function(){
   if ($(this).hasClass("active-light")) { //lights on, turn em off
     $(this).html("lights on.");
@@ -142,3 +123,7 @@ $("#light-switch").click(function(){
   }
    $(this).toggleClass("active-light");
 });
+
+/*
+Mobile Formatting
+*/
