@@ -112,6 +112,7 @@ $("#light-switch").click(function(){
     document.documentElement.style.setProperty('--accent-color', '#11c973');
     document.documentElement.style.setProperty('--inactive-color', '#FFF');
     document.documentElement.style.setProperty('--background-color', '#15181a');
+    document.documentElement.style.setProperty('--background-color-dark', '#000001');
     document.documentElement.style.setProperty('--body-color', '#949799');
   }
   else { //lights off, turn em on
@@ -119,6 +120,7 @@ $("#light-switch").click(function(){
     document.documentElement.style.setProperty('--accent-color', '#009640');
     document.documentElement.style.setProperty('--inactive-color', '#0e1111');
     document.documentElement.style.setProperty('--background-color', '#f7f7f7');
+    document.documentElement.style.setProperty('--background-color-dark', '#DEDEDE');
     document.documentElement.style.setProperty('--body-color', '#6A6A6A');
   }
    $(this).toggleClass("active-light");
