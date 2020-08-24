@@ -67,14 +67,15 @@
           <!-- Bio -->
           <div class="tab-pane fade" id="list-first" role="tabpanel" aria-labelledby="list-first-list">
             <h3>Bio</h3>
-            <h1>Hi, I'm Robert! </h1>
+            <h1>Hey, I'm Robert! </h1>
             <p>
-              I'm a first-year student studying computer science.
+              I'm a second-year student studying computer science.
               Despite my birthplace of Columbus, Ohio, I'm attending the <strong><a href="https://umich.edu/" target="_blank">University of Michigan, Online Campus</a></strong> (although I grew up in Albany, New York).
               <br /><br />
               I'm currently a Research Assistant at <strong><a href="http://comp.social.gatech.edu/" target="_blank">comp.social</a></strong>, a lab that analyzes social media systems under Professor Eric Gilbert. I'm also a
-              Project Manager at <strong><a href="http://atlasdigital.org" target="_blank">Atlas Digital</a></strong>, a student-run tech consulting group that does pro-bono work for local businesses, startups, and non-profits.
-              This summer, I'll be working as a Software Engineering Intern at <strong><a href="https://www.3m.com/" target="_blank">3M</a></strong>.
+              Project Manager at <strong><a href="http://atlasdigital.org" target="_blank">Atlas Digital</a></strong>, a student-run tech consulting group that does pro-bono work for local businesses and non-profits alike.
+              This past summer, I worked as a Software Engineering Intern at <strong><a href="https://www.3m.com/" target="_blank">3M</a></strong>, and, starting this fall, I'll be joining the <strong><a href="https://ece.engin.umich.edu/academics/course-information/course-descriptions/eecs-203/" target=_blank>EECS 203</a></strong>
+              team as an Instructional Aide.
               <br /><br />
               I can hold fluent conversations in English and Chinese, and if you give me a little time, I might be able to ask for directions to the nearest hotel in Russian.
             </p>
@@ -97,10 +98,26 @@
                 <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                   <div class="xp-panel-heading">
                     <h3><a href="https://www.3m.com/3M/en_US/health-information-systems-us/" target="_blank">Health Information Systems</a></h3>
-                    <h2>May 2020 - Present</h2>
+                    <h2>May 2020 - Aug 2020</h2>
                   </div>
                   <div class="panel-body">
-                    Not yet begun; to be determined...
+                    <p>
+                      Working remotely amidst the global pandemic, I spent the summer developing and productionizing a SQL process that identifies the members of a healthcare client who are
+                      <strong><a href="https://players.brightcove.net/2635130879001/Byb30H47x_default/index.html?videoId=6149257386001&elqTrackId=594b287f15074005924ab60d25a1b00f&elqaid=17695&elqat=2" target="_blank">at high-risk for poor outcomes should they contract COVID-19</a></strong>.
+
+                      Additionally, the process also digs through each person's medical claim history, looking for <strong><a href="https://www.cdc.gov/nchs/icd/icd10cm.htm" target="_blank">medical codes</a></strong>
+                      related to COVID-19 diagnoses, symptoms, and testing.
+                    </p>
+                    <p>
+                      The primary goal of the process is to aid healthcare payers in their ongoing COVID-19 care management efforts. By identifying high risk individuals and providing
+                      data on COVID-19 related medical history, the process gives clients the information they need to more actively seek out and protect those high risk individuals from experiencing hospitalization, ICU admittance, or even death.
+                    </p>
+                    <p>
+                      During development, I was given access to data from a payer client with approximately 5 million members. Through code optimization, I cut down my process's runtime from ~40 minutes to ~13 minutes, where the typical data processing job might take upwards of several hours on a client of this size.
+                    </p>
+                    <p>
+                      Between my process's cheap runtime cost and value for ongoing COVID-19 related care management efforts, I was given the green light to productionize my process. Using internal deployment and production tools, I added my process to the Master Schedule, which is the collection of SQL scripts run for all clients as Health Information Service's core product.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -165,10 +182,10 @@
                       Atlas Digital is a student-run consulting group that provides pro-bono tech services to businesses, startups, and non-profits in the local Ann Arbor area. I'm a part of the Internal Project Team which built and now continues to develop and maintain our website, <strong><a href="http://atlasdigital.org" target="_blank">atlasdigital.org</a></strong> through Git workflows.
                     </p>
                     <p>
-                       As the project manager, I coordinate a team of 3-4 other consultants by communicating via tools such as Slack, when2meet, and Google Meets and by organizing both short-term and long-term goals via Trello. Furthermore, because our team practices Agile and horizontal development, I prepare and present regular deliverables to either the executive board or the rest of the club and dynamically alter tasks and goals based on feedback.
+                       As the project manager, I coordinate a team of 3-4 other consultants by communicating via tools such as Slack, when2meet, and Google Meets and by organizing both short-term and long-term goals via Trello. Furthermore, because our team practices Agile-like and horizontal development, I prepare and present regular deliverables to either the executive board or the rest of the club and dynamically alter tasks and goals based on feedback.
                     </p>
                     <p>
-                      In addition to my managerial responsibilities, I also work extensively on the technical side of development with my team. Aside from contributing to a large portion of our front-end (HTML, CSS, Javascript), I am the team's only back-end developer, switching our site from the current static hosting service to a dynamic Flask webapp hosted on AWS to take advantage of templating and databases.
+                      In addition to my managerial responsibilities, I also work extensively on the technical side of development with my team. Aside from contributing to a large portion of our front-end (HTML, CSS, Javascript), I am the team's primary back-end developer. I switched our site from the previous static hosting service to a dynamic Flask webapp running on an AWS EC2 instance to take advantage of templating and databases.
                     </p>
                     <p>
                       If you happen to be a potential client interested in taking advantage of our services, feel free to contact Atlas Digital through the <strong><a href="http://atlasdigital.org/contact" target="_blank">official channels</a></strong> or email me directly.
@@ -178,11 +195,34 @@
                 </div>
               </div>
             </div> <!-- Project Manager @ Atlas Digital -->
+            <!-- Instructional Aide @ EECS 203 -->
+            <div class="panel-entry">
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingFour">
+                  <div class="panel-title">
+                    <h1>
+                      <a class="accordion-anchor" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapseOne">
+                        Instructional Aide<br/><strong><p>@ University of Michigan</p></strong>
+                      </a>
+                    </h1>
+                  </div>
+                </div>
+                <div id="collapseFour" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFour">
+                  <div class="xp-panel-heading">
+                    <h3><a href="https://ece.engin.umich.edu/academics/course-information/course-descriptions/eecs-203/" target="_blank">EECS 203 Team</a></h3>
+                    <h2>August 2020 - Present</h2>
+                  </div>
+                  <div class="panel-body">
+                    Not yet begun; to be determined...
+                  </div>
+                </div>
+              </div>
+            </div> <!-- Instructional Aide @ EECS 203 -->
           </div> <!-- Experience -->
           <!-- Projects -->
           <div class="tab-pane fade" id="list-third" role="tabpanel" aria-labelledby="list-third-list">
             <h3>Projects</h3>
-            <p>tdb</p>
+            <p>under construction</p>
           </div> <!-- Projects -->
           <!-- Coursework -->
           <div class="tab-pane fade" id="list-fourth" role="tabpanel" aria-labelledby="list-fourth-list">
@@ -203,6 +243,10 @@
               <div class="skill">C++</div>
               <div class="skill">Python</div>
               <div class="skill">Java</div>
+              <div class="skill">SQL</div>
+              <div class="skill">HTML</div>
+              <div class="skill">CSS</div>
+              <div class="skill">Javascript</div>
               <div class="skill">Bash</div>
               <div class="skill">Git</div>
               <div class="skill">Assembly</div>
