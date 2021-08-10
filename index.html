@@ -79,34 +79,79 @@
             <h3>Bio</h3>
             <h1>Hey, I'm Robert! </h1>
             <p>
-              I'm a second-year student studying computer science.
+              I'm a third-year student studying computer science.
               Despite my birthplace of Columbus, Ohio, I'm attending the <strong><a href="https://umich.edu/" target="_blank">University of Michigan</a></strong> (although I grew up in Albany, New York).
               <br /><br />
-              I'm currently an Instructional Aide for <strong><a href="https://ece.engin.umich.edu/academics/course-information/course-descriptions/eecs-203/" target=_blank>EECS 203</a></strong>, an introductory discrete mathematics course at the University of Michigan.
+              I'm currently an Instructional Aide for <strong><a href="https://ece.engin.umich.edu/academics/course-information/course-descriptions/eecs-203/" target=_blank>EECS 203</a></strong>, an introductory discrete math course at the University of Michigan.
               In addition, I'm a Research Assistant at <strong><a href="http://comp.social.gatech.edu/" target="_blank">comp.social</a></strong>, a lab that analyzes social media systems under Professor Eric Gilbert, and I'm also a
               Project Manager at <strong><a href="http://atlasdigital.org" target="_blank">Atlas Digital</a></strong>, a student-run tech consulting group that does pro-bono work for local businesses and non-profits alike.
-              This summer, I'll be working as a Software Engineering Intern at <strong><a href="https://www.amazon.com/" target="_blank">Amazon</a></strong>.
+              This past summer, I worked as a Software Development Engineer Intern at <strong><a href="https://www.amazon.com/" target="_blank">Amazon</a></strong> on an Alexa Shopping team.
               <!--This past summer, I worked as a Software Engineering Intern at <strong><a href="https://www.3m.com/" target="_blank">3M</a></strong>, and, starting this fall, I'll be joining the <strong><a href="https://ece.engin.umich.edu/academics/course-information/course-descriptions/eecs-203/" target=_blank>EECS 203</a></strong>-->
               <br /><br />
-              I can hold fluent conversations in English and Chinese, and if you give me a little time, I might be able to ask for directions to the nearest hotel in Russian.
+              I can hold fluent conversations in English and Chinese, and if you give me a few seconds to think, I might be able to ask for directions to the nearest hotel in Russian.
             </p>
           </div> <!-- Bio -->
           <!-- Experience -->
           <div class="tab-pane fade" id="list-second" role="tabpanel" aria-labelledby="list-second-list">
             <h3>Experience</h3>
-            <!-- Software Engineering Intern @ 3M -->
+            <!-- Software Development Engineer Intern @ Amazon -->
             <div class="panel-entry">
               <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingOne">
                   <div class="panel-title">
                     <h1>
                       <a class="accordion-anchor" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Software Engineering Intern<br/><strong><p>@ 3M</p></strong>
+                        Software Development Engineer Intern<br/><strong><p>@ Amazon</p></strong>
                       </a>
                     </h1>
                   </div>
                 </div>
                 <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="xp-panel-heading">
+                    <h3><a href="https://www.amazon.com/alexa-shopping-hub" target="_blank">Alexa Shopping</a></h3>
+                    <h2>May 2021 - July 2021</h2>
+                  </div>
+                  <div class="panel-body">
+                    <p>
+                      I spent the summer working on the Conversation Routing team, a team with the responsibility of routing incoming shopping requests from Alexa. One of the services that
+                      our team owns is a web platform where partners 60+ other Alexa Shopping teams can configure customer experiences for shopping.
+                    </p>
+                    <p>
+                      One of the configurations requires partners to write logic in <strong><a href="https://github.com/schibsted/jslt" target="_blank">JSLT</a></strong>, a JSON transformation language
+                      yielding code that can become very long and complex. As such, we urge partners to write unit tests for their JSLT expressions. However, these unit tests could only be run during
+                      a release, the process where ALL configuration are saved into production. Thus, a release can take around ~10 minutes, which means that a partner trying to write, edit, and debug their JSLT configuration
+                      would need to wait ~10 minutes for any sort of feedback.
+                    </p>
+                    <p>
+                      My intern project was to build a front-end feature to allow partners to directly run their JSLT tests in the web platform UI. I was responsible for every phase of the project,
+                      from having a requirements gathering session with a partner, drafting a design doc, leading a team review of the design doc, implementing the project, writing unit and end to end tests, 
+                      and leaving behind extensive documentation.
+                    </p>
+                    <p>
+                      I learned a lot throughout the course of my internship. Besides getting a lot better at reading and writing code, I've gotten acquainted with the concept of ownership. 
+                      In the later weeks of my internship, an on-call engineer discovered that one of my pushes had inadvertently broke something, so I promptly traced the source of the bug and sent out a fix.
+                      I found that this experience was empowering-- not the action of breaking the codebase, of course, but the idea that I take responsibility for each and every line of code I push.
+                    </p>
+                    <p>
+                      Overall, 5 stars. Amazing team, would intern here again.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div> <!-- Software Development Engineer Intern @ Amazon -->
+            <!-- Software Engineering Intern @ 3M -->
+            <div class="panel-entry">
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                  <div class="panel-title">
+                    <h1>
+                      <a class="accordion-anchor" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                        Software Engineering Intern<br/><strong><p>@ 3M</p></strong>
+                      </a>
+                    </h1>
+                  </div>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
                   <div class="xp-panel-heading">
                     <h3><a href="https://www.3m.com/3M/en_US/health-information-systems-us/" target="_blank">Health Information Systems</a></h3>
                     <h2>May 2020 - Aug 2020</h2>
@@ -136,16 +181,16 @@
             <!-- Research Assistant @ comp.social -->
             <div class="panel-entry">
               <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingTwo">
+                <div class="panel-heading" role="tab" id="headingThree">
                   <div class="panel-title">
                     <h1>
-                      <a class="accordion-anchor" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                      <a class="accordion-anchor" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
                         Research Assistant<br/><strong><p>@ comp.social</p></strong>
                       </a>
                     </h1>
                   </div>
                 </div>
-                <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+                <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
                     <div class="xp-panel-heading">
                       <h3><a href="http://crossmod.ml" target="_blank">CrossModerator Team</a></h3>
                       <h2>Sept 2019 - Present</h2>
@@ -174,16 +219,16 @@
             <div class="panel-entry">
               <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                 <div class="panel panel-default">
-                  <div class="panel-heading" role="tab" id="headingThree">
+                  <div class="panel-heading" role="tab" id="headingFour">
                     <div class="panel-title">
                       <h1>
-                        <a class="accordion-anchor" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                        <a class="accordion-anchor" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
                           Project Manager<br/><strong><p>@ Atlas Digital</p></strong>
                         </a>
                       </h1>
                     </div>
                   </div>
-                  <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+                  <div id="collapseFour" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFour">
                     <div class="xp-panel-heading">
                       <h3><a href="http://atlasdigital.org" target="_blank">atlasdigital.org Team</a></h3>
                       <h2>Sept 2019 - Present</h2>
@@ -209,18 +254,18 @@
             <!-- Instructional Aide @ EECS 203 -->
             <div class="panel-entry">
               <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingFour">
+                <div class="panel-heading" role="tab" id="headingFive">
                   <div class="panel-title">
                     <h1>
-                      <a class="accordion-anchor" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapseOne">
+                      <a class="accordion-anchor" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
                         Instructional Aide<br/><strong><p>@ University of Michigan</p></strong>
                       </a>
                     </h1>
                   </div>
                 </div>
-                <div id="collapseFour" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFour">
+                <div id="collapseFive" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFive">
                   <div class="xp-panel-heading">
-                    <h3><a href="https://ece.engin.umich.edu/academics/course-information/course-descriptions/eecs-203/" target="_blank">EECS 203 Team</a></h3>
+                    <h3><a href="https://ece.engin.umich.edu/academics/course-information/course-descriptions/eecs-203/" target="_blank">EECS 203 Staff</a></h3>
                     <h2>August 2020 - Present</h2>
                   </div>
                   <div class="panel-body">
