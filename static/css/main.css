@@ -56,7 +56,27 @@ h2 a:hover {
 }
 
 .heading h1 {
+  color: var(--accent-color);
   font-weight: 800;
+}
+
+.heading h1 .divider {
+  color: var(--inactive-color);
+  font-weight: 800;
+  display: inline;
+}
+
+.heading h1 a {
+  color: var(--inactive-color);
+  font-weight: 100;
+}
+
+.heading h1 a:hover {
+  color: var(--accent-color);
+  text-decoration-style: none;
+  text-decoration-skip-ink: none;
+  text-decoration-line: none;
+  font-weight: 1000;
 }
 
 /* Mobile only */
@@ -519,7 +539,6 @@ Footer
 .container2 {
   padding-top: 11em;
 }
-
 
 @media only screen and (max-width: 991px) {
   body {
