@@ -3,363 +3,394 @@
 <!-- @TODO: Make Mobile Friendly! -->
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Your friendly neighborhood CS student.">
-  <title>Robert Kang</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Your friendly neighborhood CS student.">
+    <title>Robert Kang</title>
 
-  <!-- Favicons -->
-	<link rel="shortcut icon" href="static/images/favicon/favicon.ico">
-	<link rel="icon" sizes="16x16 32x32 64x64" href="static/images/favicon/favicon.ico">
-	<link rel="icon" type="image/png" sizes="196x196" href="static/images/favicon/favicon-192.png">
-	<link rel="icon" type="image/png" sizes="160x160" href="static/images/favicon/favicon-160.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="static/images/favicon/favicon-96.png">
-	<link rel="icon" type="image/png" sizes="64x64" href="static/images/favicon/favicon-64.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="static/images/favicon/favicon-32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="static/images/favicon/favicon-16.png">
-	<link rel="apple-touch-icon" href="static/images/favicon/favicon-57.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="static/images/favicon/favicon-114.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="static/images/favicon/favicon-72.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="static/images/favicon/favicon-144.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="static/images/favicon/favicon-60.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="static/images/favicon/favicon-120.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="static/images/favicon/favicon-76.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="static/images/favicon/favicon-152.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="static/images/favicon/favicon-180.png">
-	<meta name="msapplication-TileColor" content="#FFFFFF">
-	<meta name="msapplication-TileImage" content="static/images/favicon/favicon-144.png">
-	<meta name="msapplication-config" content="static/images/favicon/browserconfig.xml">
-  <!-- CSS -->
-  <link href="static/css/bootstrap.css" rel="stylesheet">
-  <link href="static/css/main.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="static/images/favicon/favicon.ico">
+    <link rel="icon" sizes="16x16 32x32 64x64" href="static/images/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="196x196" href="static/images/favicon/favicon-192.png">
+    <link rel="icon" type="image/png" sizes="160x160" href="static/images/favicon/favicon-160.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="static/images/favicon/favicon-96.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="static/images/favicon/favicon-64.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/images/favicon/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/images/favicon/favicon-16.png">
+    <link rel="apple-touch-icon" href="static/images/favicon/favicon-57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="static/images/favicon/favicon-114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="static/images/favicon/favicon-72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="static/images/favicon/favicon-144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="static/images/favicon/favicon-60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="static/images/favicon/favicon-120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="static/images/favicon/favicon-76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="static/images/favicon/favicon-152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="static/images/favicon/favicon-180.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="static/images/favicon/favicon-144.png">
+    <meta name="msapplication-config" content="static/images/favicon/browserconfig.xml">
+    <!-- CSS -->
+    <link href="static/css/bootstrap.css" rel="stylesheet">
+    <link href="static/css/main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L6BMY9J217"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L6BMY9J217"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-    gtag('config', 'G-L6BMY9J217');
-  </script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-L6BMY9J217');
+    </script>
 </head>
 
 <body>
-  <div class="container">
-    <div class="row">
-      <!-- Main Header -->
-      <div class="nav-head-container col-6">
-        <div class="heading">
-          <h1>Robert Kang <div class="divider">/</div> <a href="photo-gallery.html">Photojournal</a></h1>
-          <h2>computer science student</h2>
-          <h2>university of michigan</h2>
-          <h2 class="text-cycle">what am i up to?</h2>
-        </div>
-          <!-- Listgroup Navbar -->
-          <nav class="list-group" id="list-tab" role="tablist">
-            <a class="list-group-item list-group-item-action link" id="list-bio-first" data-toggle="tab" href="#list-first" role="tab" aria-controls="list-first">Bio</a>
-            <a class="list-group-item list-group-item-action link" id="list-second-list" data-toggle="tab" href="#list-second" role="tab" aria-controls="list-second">Experience</a>
-            <a class="list-group-item list-group-item-action link" id="list-third-list" data-toggle="tab" href="#list-third" role="tab" aria-controls="list-third">Projects</a>
-            <a class="list-group-item list-group-item-action link" id="list-fourth-list" data-toggle="tab" href="#list-fourth" role="tab" aria-controls="list-fourth">Coursework</a>
-          </nav> <!-- Listgroup Navbar -->
-      </div> <!-- Main Header -->
+    <div class="container">
+        <div class="row">
+            <!-- Main Header -->
+            <div class="nav-head-container col-6">
+                <div class="heading">
+                    <!-- <h1>Robert Kang <div class="divider">/</div> <a href="photo-gallery.html">Photojournal</a></h1> -->
+                    <h1>Robert Kang</h1>
+                    <h2>computer science student</h2>
+                    <h2>university of michigan</h2>
+                    <h2 class="text-cycle">what am i up to?</h2>
+                </div>
+                <!-- Listgroup Navbar -->
+                <nav class="list-group" id="list-tab" role="tablist">
+                    <a class="list-group-item list-group-item-action link" id="list-bio-first" data-toggle="tab" href="#list-first" role="tab" aria-controls="list-first">Bio</a>
+                    <a class="list-group-item list-group-item-action link" id="list-second-list" data-toggle="tab" href="#list-second" role="tab" aria-controls="list-second">Experience</a>
+                    <a class="list-group-item list-group-item-action link" id="list-third-list" data-toggle="tab" href="#list-third" role="tab" aria-controls="list-third">Projects</a>
+                    <a class="list-group-item list-group-item-action link" id="list-fourth-list" data-toggle="tab" href="#list-fourth" role="tab" aria-controls="list-fourth">Coursework</a>
+                </nav>
+                <!-- Listgroup Navbar -->
+            </div>
+            <!-- Main Header -->
 
-      <!-- Main Content -->
+            <!-- Main Content -->
 
 
-      <div class="container2 col-6">
-        <!-- Listgroup Content -->
-        <div class="tab-content link-content" id="nav-tabContent">
-          <!-- Landing (empty by default) -->
-          <div class="tab-pane fade show active" id="list-landing" role="tabpanel" aria-labelledby="list-landing-list">
-          </div> <!-- Landing -->
-          <!-- Bio -->
-          <div class="tab-pane fade" id="list-first" role="tabpanel" aria-labelledby="list-first-list">
-            <h3>Bio</h3>
-            <h1>Hey, I'm Robert! </h1>
-            <p>
-              I'm a third-year student studying computer science.
-              Despite my birthplace of Columbus, Ohio, I'm attending the <strong><a href="https://umich.edu/" target="_blank">University of Michigan</a></strong> (although I grew up in Albany, New York).
-              <br /><br />
-              I'm currently an Instructional Aide for <strong><a href="https://ece.engin.umich.edu/academics/course-information/course-descriptions/eecs-203/" target=_blank>EECS 203</a></strong>, an introductory discrete math course at the University of Michigan.
-              In addition, I'm a Research Assistant at <strong><a href="http://comp.social.gatech.edu/" target="_blank">comp.social</a></strong>, a lab that analyzes social media systems under Professor Eric Gilbert, and I'm also a
-              Project Manager at <strong><a href="http://atlasdigital.org" target="_blank">Atlas Digital</a></strong>, a student-run tech consulting group that does pro-bono work for local businesses and non-profits alike.
-              This past summer, I worked as a Software Development Engineer Intern at <strong><a href="https://www.amazon.com/" target="_blank">Amazon</a></strong> on an Alexa Shopping team.
-              <!--This past summer, I worked as a Software Engineering Intern at <strong><a href="https://www.3m.com/" target="_blank">3M</a></strong>, and, starting this fall, I'll be joining the <strong><a href="https://ece.engin.umich.edu/academics/course-information/course-descriptions/eecs-203/" target=_blank>EECS 203</a></strong>-->
-              <br /><br />
-              I can hold fluent conversations in English and Chinese, and if you give me a few seconds to think, I might be able to ask for directions to the nearest hotel in Russian.
-            </p>
-          </div> <!-- Bio -->
-          <!-- Experience -->
-          <div class="tab-pane fade" id="list-second" role="tabpanel" aria-labelledby="list-second-list">
-            <h3>Experience</h3>
-            <!-- Software Development Engineer Intern @ Amazon -->
-            <div class="panel-entry">
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingOne">
-                  <div class="panel-title">
-                    <h1>
-                      <a class="accordion-anchor" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <div class="container2 col-6">
+                <!-- Listgroup Content -->
+                <div class="tab-content link-content" id="nav-tabContent">
+                    <!-- Landing (empty by default) -->
+                    <div class="tab-pane fade show active" id="list-landing" role="tabpanel" aria-labelledby="list-landing-list">
+                    </div>
+                    <!-- Landing -->
+                    <!-- Bio -->
+                    <div class="tab-pane fade" id="list-first" role="tabpanel" aria-labelledby="list-first-list">
+                        <h3>Bio</h3>
+                        <h1>Hey, I'm Robert! </h1>
+                        <p>
+                            I'm a third-year student studying computer science. Despite my birthplace of Columbus, Ohio, I'm attending the <strong><a href="https://umich.edu/" target="_blank">University of Michigan</a></strong> (although I grew up in
+                            Albany, New York).
+                            <br /><br /> I'm currently an Instructional Aide for <strong><a href="https://ece.engin.umich.edu/academics/course-information/course-descriptions/eecs-203/" target=_blank>EECS 203</a></strong>, an introductory discrete math
+                            course at the University of Michigan. In addition, I'm a Research Assistant at <strong><a href="http://comp.social.gatech.edu/" target="_blank">comp.social</a></strong>, a lab that analyzes social media systems under Professor
+                            Eric Gilbert, and I'm also a Project Manager at <strong><a href="http://atlasdigital.org" target="_blank">Atlas Digital</a></strong>, a student-run tech consulting group that does pro-bono work for local businesses and non-profits
+                            alike. This past summer, I worked as a Software Development Engineer Intern at <strong><a href="https://www.amazon.com/" target="_blank">Amazon</a></strong> on an Alexa Shopping team.
+                            <!--This past summer, I worked as a Software Engineering Intern at <strong><a href="https://www.3m.com/" target="_blank">3M</a></strong>, and, starting this fall, I'll be joining the <strong><a href="https://ece.engin.umich.edu/academics/course-information/course-descriptions/eecs-203/" target=_blank>EECS 203</a></strong>-->
+                            <br /><br /> I can hold fluent conversations in English and Chinese, and if you give me a few seconds to think, I might be able to ask for directions to the nearest hotel in Russian.
+                        </p>
+                    </div>
+                    <!-- Bio -->
+                    <!-- Experience -->
+                    <div class="tab-pane fade" id="list-second" role="tabpanel" aria-labelledby="list-second-list">
+                        <h3>Experience</h3>
+                        <!-- Software Development Engineer Intern @ Amazon -->
+                        <div class="panel-entry">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingOne">
+                                    <div class="panel-title">
+                                        <h1>
+                                            <a class="accordion-anchor" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                         Software Development Engineer Intern<br/><strong><p>@ Amazon</p></strong>
                       </a>
-                    </h1>
-                  </div>
-                </div>
-                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                  <div class="xp-panel-heading">
-                    <h3><a href="https://www.amazon.com/alexa-shopping-hub" target="_blank">Alexa Shopping</a></h3>
-                    <h2>May 2021 - July 2021</h2>
-                  </div>
-                  <div class="panel-body">
-                    <p>
-                      I spent the summer working on the Conversation Routing team, a team with the responsibility of routing incoming shopping requests from Alexa. One of the services that
-                      our team owns is a web platform where partners 60+ other Alexa Shopping teams can configure customer experiences for shopping.
-                    </p>
-                    <p>
-                      One of the configurations requires partners to write logic in <strong><a href="https://github.com/schibsted/jslt" target="_blank">JSLT</a></strong>, a JSON transformation language
-                      yielding code that can become very long and complex. As such, we urge partners to write unit tests for their JSLT expressions. However, these unit tests could only be run during
-                      a release, the process where ALL configuration are saved into production. Thus, a release can take around ~10 minutes, which means that a partner trying to write, edit, and debug their JSLT configuration
-                      would need to wait ~10 minutes for any sort of feedback.
-                    </p>
-                    <p>
-                      My intern project was to build a front-end feature to allow partners to directly run their JSLT tests in the web platform UI. I was responsible for every phase of the project,
-                      from having a requirements gathering session with a partner, drafting a design doc, leading a team review of the design doc, implementing the project, writing unit and end to end tests, 
-                      and leaving behind extensive documentation.
-                    </p>
-                    <p>
-                      I learned a lot throughout the course of my internship. Besides getting a lot better at reading and writing code, I've gotten acquainted with the concept of ownership. 
-                      In the later weeks of my internship, an on-call engineer discovered that one of my pushes had inadvertently broke something, so I promptly traced the source of the bug and sent out a fix.
-                      I found that this experience was empowering-- not the action of breaking the codebase, of course, but the idea that I take responsibility for each and every line of code I push.
-                    </p>
-                    <p>
-                      Overall, 5 stars. Amazing team, would intern here again.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div> <!-- Software Development Engineer Intern @ Amazon -->
-            <!-- Software Engineering Intern @ 3M -->
-            <div class="panel-entry">
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingTwo">
-                  <div class="panel-title">
-                    <h1>
-                      <a class="accordion-anchor" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                        </h1>
+                                    </div>
+                                </div>
+                                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                    <div class="xp-panel-heading">
+                                        <h3><a href="https://www.amazon.com/alexa-shopping-hub" target="_blank">Alexa Shopping</a></h3>
+                                        <h2>May 2021 - July 2021</h2>
+                                    </div>
+                                    <div class="panel-body">
+                                        <p>
+                                            I spent the summer working on the Conversation Routing team, a team with the responsibility of routing incoming shopping requests from Alexa. One of the services that our team owns is a web platform where partners 60+ other Alexa Shopping teams can configure
+                                            customer experiences for shopping.
+                                        </p>
+                                        <p>
+                                            One of the configurations requires partners to write logic in <strong><a href="https://github.com/schibsted/jslt" target="_blank">JSLT</a></strong>, a JSON transformation language yielding code that can become
+                                            very long and complex. As such, we urge partners to write unit tests for their JSLT expressions. However, these unit tests could only be run during a release, the process where ALL configuration are saved into
+                                            production. Thus, a release can take around ~10 minutes, which means that a partner trying to write, edit, and debug their JSLT configuration would need to wait ~10 minutes for any sort of feedback.
+                                        </p>
+                                        <p>
+                                            My intern project was to build a front-end feature to allow partners to directly run their JSLT tests in the web platform UI. I was responsible for every phase of the project, from having a requirements gathering session with a partner, drafting a design
+                                            doc, leading a team review of the design doc, implementing the project, writing unit and end to end tests, and leaving behind extensive documentation.
+                                        </p>
+                                        <p>
+                                            I learned a lot throughout the course of my internship. Besides getting a lot better at reading and writing code, I've gotten acquainted with the concept of ownership. In the later weeks of my internship, an on-call engineer discovered that one of my
+                                            pushes had inadvertently broke something, so I promptly traced the source of the bug and sent out a fix. I found that this experience was empowering-- not the action of breaking the codebase, of course, but
+                                            the idea that I take responsibility for each and every line of code I push.
+                                        </p>
+                                        <p>
+                                            Overall, 5 stars. Amazing team, would intern here again.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Software Development Engineer Intern @ Amazon -->
+                        <!-- Software Engineering Intern @ 3M -->
+                        <div class="panel-entry">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingTwo">
+                                    <div class="panel-title">
+                                        <h1>
+                                            <a class="accordion-anchor" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                         Software Engineering Intern<br/><strong><p>@ 3M</p></strong>
                       </a>
-                    </h1>
-                  </div>
-                </div>
-                <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
-                  <div class="xp-panel-heading">
-                    <h3><a href="https://www.3m.com/3M/en_US/health-information-systems-us/" target="_blank">Health Information Systems</a></h3>
-                    <h2>May 2020 - Aug 2020</h2>
-                  </div>
-                  <div class="panel-body">
-                    <p>
-                      Working remotely amidst the global pandemic, I spent the summer developing and productionizing a SQL process that identifies the members of a healthcare client who are
-                      <strong><a href="https://players.brightcove.net/2635130879001/Byb30H47x_default/index.html?videoId=6149257386001&elqTrackId=594b287f15074005924ab60d25a1b00f&elqaid=17695&elqat=2" target="_blank">at high-risk for poor outcomes should they contract COVID-19</a></strong>.
-
-                      Additionally, the process also digs through each person's medical claim history, looking for <strong><a href="https://www.cdc.gov/nchs/icd/icd10cm.htm" target="_blank">medical codes</a></strong>
-                      related to COVID-19 diagnoses, symptoms, and testing.
-                    </p>
-                    <p>
-                      The primary goal of the process is to aid healthcare payers in their ongoing COVID-19 care management efforts. By identifying high risk individuals and providing
-                      data on COVID-19 related medical history, the process gives clients the information they need to more actively seek out and protect those high risk individuals from experiencing hospitalization, ICU admittance, or even death.
-                    </p>
-                    <p>
-                      During development, I was given access to data from a payer client with approximately 5 million members. Through code optimization, I cut down my process's runtime from ~40 minutes to ~13 minutes, where the typical data processing job might take upwards of several hours on a client of this size.
-                    </p>
-                    <p>
-                      Between my process's cheap runtime cost and ongoing need for COVID-19 related care management data, I was given the green light to productionize my process. Using internal deployment and production tools, I added my process to the Master Schedule, which is the collection of SQL scripts run for all clients as Health Information Service's core product.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div> <!-- Software Engineering Intern @ 3M -->
-            <!-- Research Assistant @ comp.social -->
-            <div class="panel-entry">
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingThree">
-                  <div class="panel-title">
-                    <h1>
-                      <a class="accordion-anchor" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                        </h1>
+                                    </div>
+                                </div>
+                                <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+                                    <div class="xp-panel-heading">
+                                        <h3><a href="https://www.3m.com/3M/en_US/health-information-systems-us/" target="_blank">Health Information Systems</a></h3>
+                                        <h2>May 2020 - Aug 2020</h2>
+                                    </div>
+                                    <div class="panel-body">
+                                        <p>
+                                            Working remotely amidst the global pandemic, I spent the summer developing and productionizing a SQL process that identifies the members of a healthcare client who are
+                                            <strong><a href="https://players.brightcove.net/2635130879001/Byb30H47x_default/index.html?videoId=6149257386001&elqTrackId=594b287f15074005924ab60d25a1b00f&elqaid=17695&elqat=2" target="_blank">at high-risk for poor outcomes should they contract COVID-19</a></strong>.
+                                            Additionally, the process also digs through each person's medical claim history, looking for <strong><a href="https://www.cdc.gov/nchs/icd/icd10cm.htm" target="_blank">medical codes</a></strong> related to COVID-19
+                                            diagnoses, symptoms, and testing.
+                                        </p>
+                                        <p>
+                                            The primary goal of the process is to aid healthcare payers in their ongoing COVID-19 care management efforts. By identifying high risk individuals and providing data on COVID-19 related medical history, the process gives clients the information they
+                                            need to more actively seek out and protect those high risk individuals from experiencing hospitalization, ICU admittance, or even death.
+                                        </p>
+                                        <p>
+                                            During development, I was given access to data from a payer client with approximately 5 million members. Through code optimization, I cut down my process's runtime from ~40 minutes to ~13 minutes, where the typical data processing job might take upwards
+                                            of several hours on a client of this size.
+                                        </p>
+                                        <p>
+                                            Between my process's cheap runtime cost and ongoing need for COVID-19 related care management data, I was given the green light to productionize my process. Using internal deployment and production tools, I added my process to the Master Schedule, which
+                                            is the collection of SQL scripts run for all clients as Health Information Service's core product.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Software Engineering Intern @ 3M -->
+                        <!-- Research Assistant @ comp.social -->
+                        <div class="panel-entry">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingThree">
+                                    <div class="panel-title">
+                                        <h1>
+                                            <a class="accordion-anchor" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
                         Research Assistant<br/><strong><p>@ comp.social</p></strong>
                       </a>
-                    </h1>
-                  </div>
-                </div>
-                <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
-                    <div class="xp-panel-heading">
-                      <h3><a href="http://crossmod.ml" target="_blank">CrossModerator Team</a></h3>
-                      <h2>Sept 2019 - Present</h2>
-                    </div>
-                    <div class="panel-body">
-                        <p>
-                          <strong><a href="https://www.cc.gatech.edu/~eshwar3/uploads/3/8/0/4/38043045/eshwar-crossmod-cscw2019.pdf" target="_blank">Crossmoderator</a></strong>, or Crossmod for short, is a Reddit moderation bot which detects toxic content through machine learning. Crossmod is intended as a supplement to current moderation tools which rely on matching regular expressions and are unable to detect more subtle personal attacks or racist remarks that don't explicity contain toxic keywords.
-                        </p>
-                        <p>
-                          Our research team recently deployed Crossmod to <strong><a href="https://www.reddit.com/r/Futurology/about/moderators/?after=1945167462" target="_blank">r/Futurology</a></strong>, a subreddit with over 14 million users. We are studying Crossmod's accuracy and precision and plan to refine Crossmod's machine learning models based on its real-time moderation decisions on the subreddit.
-                        </p>
-                        <p>
-                          In order make Crossmod more scalable, I deployed its backend of 160 gigabytes of FastText machine learning models to a cloud-based<strong><a href="https://ceshwar.github.io/crossmod/crossmod/api/" target="_blank"> RESTful Flask API</a></strong>. The API also allows Crossmod's backend to be utilized more generally as a public toxicity detection service (it has already been utilized in a separate, <strong><a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1553376" target="_blank">NSF-funded project</a></strong> studying tools that can be used to study internet toxicity).
-                        </p>
-                        <p>
-                          A demo can be found <strong><a href="http://crossmod.ml/client/" target="_blank">here</a></strong>. We are currently refactoring Crossmod to switch its backend to the API. If you would like access to an API key, feel free to contact me.
-                        </p>
-                        <p>
-                          In the future, we hope to release Crossmod as an <strong><a href="https://github.com/ceshwar/crossmod" target="_blank">open-source project</a></strong>.
-                        </p>
-                    </div>
-                </div>
-              </div>
-            </div> <!-- Research Assistant @comp.social -->
-            <!-- Project Manager @ Atlas Digital -->
-            <div class="panel-entry">
-              <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                <div class="panel panel-default">
-                  <div class="panel-heading" role="tab" id="headingFour">
-                    <div class="panel-title">
-                      <h1>
-                        <a class="accordion-anchor" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                        </h1>
+                                    </div>
+                                </div>
+                                <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+                                    <div class="xp-panel-heading">
+                                        <h3><a href="http://crossmod.ml" target="_blank">CrossModerator Team</a></h3>
+                                        <h2>Sept 2019 - Present</h2>
+                                    </div>
+                                    <div class="panel-body">
+                                        <p>
+                                            <strong><a href="https://www.cc.gatech.edu/~eshwar3/uploads/3/8/0/4/38043045/eshwar-crossmod-cscw2019.pdf" target="_blank">Crossmoderator</a></strong>, or Crossmod for short, is a Reddit moderation bot which
+                                            detects toxic content through machine learning. Crossmod is intended as a supplement to current moderation tools which rely on matching regular expressions and are unable to detect more subtle personal attacks
+                                            or racist remarks that don't explicity contain toxic keywords.
+                                        </p>
+                                        <p>
+                                            Our research team recently deployed Crossmod to <strong><a href="https://www.reddit.com/r/Futurology/about/moderators/?after=1945167462" target="_blank">r/Futurology</a></strong>, a subreddit with over 14 million
+                                            users. We are studying Crossmod's accuracy and precision and plan to refine Crossmod's machine learning models based on its real-time moderation decisions on the subreddit.
+                                        </p>
+                                        <p>
+                                            In order make Crossmod more scalable, I deployed its backend of 160 gigabytes of FastText machine learning models to a cloud-based<strong><a href="https://ceshwar.github.io/crossmod/crossmod/api/" target="_blank"> RESTful Flask API</a></strong>.
+                                            The API also allows Crossmod's backend to be utilized more generally as a public toxicity detection service (it has already been utilized in a separate, <strong><a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1553376" target="_blank">NSF-funded project</a></strong>                                            studying tools that can be used to study internet toxicity).
+                                        </p>
+                                        <p>
+                                            A demo can be found <strong><a href="http://crossmod.ml/client/" target="_blank">here</a></strong>. We are currently refactoring Crossmod to switch its backend to the API. If you would like access to an API
+                                            key, feel free to contact me.
+                                        </p>
+                                        <p>
+                                            In the future, we hope to release Crossmod as an <strong><a href="https://github.com/ceshwar/crossmod" target="_blank">open-source project</a></strong>.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Research Assistant @comp.social -->
+                        <!-- Project Manager @ Atlas Digital -->
+                        <div class="panel-entry">
+                            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingFour">
+                                        <div class="panel-title">
+                                            <h1>
+                                                <a class="accordion-anchor" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
                           Project Manager<br/><strong><p>@ Atlas Digital</p></strong>
                         </a>
-                      </h1>
-                    </div>
-                  </div>
-                  <div id="collapseFour" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFour">
-                    <div class="xp-panel-heading">
-                      <h3><a href="http://atlasdigital.org" target="_blank">atlasdigital.org Team</a></h3>
-                      <h2>Sept 2019 - Present</h2>
-                    </div>
-                    <div class="panel-body">
-                    <p>
-                      Atlas Digital is a student-run consulting group that provides pro-bono tech services to businesses, startups, and non-profits in the local Ann Arbor area. I'm a part of the Internal Project Team which built and now continues to develop and maintain our website, <strong><a href="http://atlasdigital.org" target="_blank">atlasdigital.org</a></strong> through Git workflows.
-                    </p>
-                    <p>
-                       As the project manager, I coordinate a team of 3-4 other consultants by communicating via tools such as Slack, when2meet, and Google Meets and by organizing both short-term and long-term goals via Trello. Furthermore, because our team practices Agile-like and horizontal development, I prepare and present regular deliverables to either the executive board or the rest of the club and dynamically alter tasks and goals based on feedback.
-                    </p>
-                    <p>
-                      In addition to my managerial responsibilities, I also work extensively on the technical side of development with my team. Aside from contributing to a large portion of our front-end (HTML, CSS, Javascript), I am the team's primary back-end developer. I switched our site from the previous static hosting service to a dynamic Flask webapp running on an AWS EC2 instance to take advantage of templating and databases.
-                    </p>
-                    <p>
-                      If you happen to be a potential client interested in taking advantage of our services, feel free to contact Atlas Digital through the <strong><a href="http://atlasdigital.org/contact" target="_blank">official channels</a></strong> or email me directly.
-                    </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> <!-- Project Manager @ Atlas Digital -->
-            <!-- Instructional Aide @ EECS 203 -->
-            <div class="panel-entry">
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingFive">
-                  <div class="panel-title">
-                    <h1>
-                      <a class="accordion-anchor" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                                            </h1>
+                                        </div>
+                                    </div>
+                                    <div id="collapseFour" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFour">
+                                        <div class="xp-panel-heading">
+                                            <h3><a href="http://atlasdigital.org" target="_blank">atlasdigital.org Team</a></h3>
+                                            <h2>Sept 2019 - Present</h2>
+                                        </div>
+                                        <div class="panel-body">
+                                            <p>
+                                                Atlas Digital is a student-run consulting group that provides pro-bono tech services to businesses, startups, and non-profits in the local Ann Arbor area. I'm a part of the Internal Project Team which built and now continues to develop and maintain our
+                                                website, <strong><a href="http://atlasdigital.org" target="_blank">atlasdigital.org</a></strong> through Git workflows.
+                                            </p>
+                                            <p>
+                                                As the project manager, I coordinate a team of 3-4 other consultants by communicating via tools such as Slack, when2meet, and Google Meets and by organizing both short-term and long-term goals via Trello. Furthermore, because our team practices Agile-like
+                                                and horizontal development, I prepare and present regular deliverables to either the executive board or the rest of the club and dynamically alter tasks and goals based on feedback.
+                                            </p>
+                                            <p>
+                                                In addition to my managerial responsibilities, I also work extensively on the technical side of development with my team. Aside from contributing to a large portion of our front-end (HTML, CSS, Javascript), I am the team's primary back-end developer.
+                                                I switched our site from the previous static hosting service to a dynamic Flask webapp running on an AWS EC2 instance to take advantage of templating and databases.
+                                            </p>
+                                            <p>
+                                                If you happen to be a potential client interested in taking advantage of our services, feel free to contact Atlas Digital through the <strong><a href="http://atlasdigital.org/contact" target="_blank">official channels</a></strong>                                                or email me directly.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Project Manager @ Atlas Digital -->
+                        <!-- Instructional Aide @ EECS 203 -->
+                        <div class="panel-entry">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingFive">
+                                    <div class="panel-title">
+                                        <h1>
+                                            <a class="accordion-anchor" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
                         Instructional Aide<br/><strong><p>@ University of Michigan</p></strong>
                       </a>
-                    </h1>
-                  </div>
+                                        </h1>
+                                    </div>
+                                </div>
+                                <div id="collapseFive" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFive">
+                                    <div class="xp-panel-heading">
+                                        <h3><a href="https://ece.engin.umich.edu/academics/course-information/course-descriptions/eecs-203/" target="_blank">EECS 203 Staff</a></h3>
+                                        <h2>August 2020 - Present</h2>
+                                    </div>
+                                    <div class="panel-body">
+                                        <p>
+                                            I'm an instructional aide for <strong><a href="https://ece.engin.umich.edu/academics/course-information/course-descriptions/eecs-203/" target="_blank">EECS 203</a></strong> (Discrete Math) at the University
+                                            of Michigan. I do anything I can to help our team of other IAs, GSIs, and profs keep this course of 900+ students running smoothly.
+                                            <p>
+                                                <p>
+                                                    My duties include running a weekly discussion section where students can review lecture material and practice problem-solving techniques, holding virtual office hours, writing and testing exam and homework problem sets, answering Piazza posts, and managing
+                                                    the chat in online Zoom lectures.
+                                                    <p>
+                                                        <p>
+                                                            All in all, I've been having a lot of fun teaching and working alongside the rest of the EECS 203 staff. I did quite a bit of teaching in high school (I coached and ran classes for Mathcounts, TA'd for Chinese Language classes, and ran a local programming
+                                                            club), so I'm glad I was able to find an opportunity to continue doing so in college.
+                                                        </p>
+                                                        <p>
+                                                            As a plus, there are some pretty interesting insights you can derive from discrete math. Did you know that, in a random group of just 23 people, there's about a <strong><a href="https://en.wikipedia.org/wiki/Birthday_problem" target="_blank">50% chance that two people have the same birthday</a></strong>?
+                                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Instructional Aide @ EECS 203 -->
+                    </div>
+                    <!-- Experience -->
+                    <!-- Projects -->
+                    <div class="tab-pane fade" id="list-third" role="tabpanel" aria-labelledby="list-third-list">
+                        <h3>Projects</h3>
+                        <p>under construction</p>
+                    </div>
+                    <!-- Projects -->
+                    <!-- Coursework -->
+                    <div class="tab-pane fade" id="list-fourth" role="tabpanel" aria-labelledby="list-fourth-list">
+                        <h3>Coursework</h3>
+                        <div class="entry-header">
+                            <h1>University of Michigan<span>Ann Arbor, MI</span></h1>
+                            <h3>Computer Science, B.S.E.<span>2019-2023</span></h3>
+                        </div>
+                        <ul>
+                            <li><strong>EECS 482</strong> | Intro to Operating Systems (+ Advanced OS Projects)</li>
+                            <li><strong>EECS 370</strong> | Intro to Computer Organization</li>
+                            <li><strong>EECS 281</strong> | Data Structures and Algorithms</li>
+                            <li><strong>EECS 280</strong> | Intro Programming and Data Structures</li>
+                            <li><strong>EECS 203</strong> | Discrete Mathematics</li>
+                            <li><strong>EECS 201</strong> | Computer Science Pragmatics</li>
+                            <li><strong>ENGR 100</strong> | Microprocessors and Toys</li>
+                            <li><strong>MATH 217</strong> | Linear Algebra</li>
+                            <li><strong>MATH 215</strong> | Multivariable Calculus</li>
+                        </ul>
+                        <div class="skill-container">
+                            <div class="skill">C++</div>
+                            <div class="skill">Python</div>
+                            <div class="skill">Java</div>
+                            <div class="skill">SQL</div>
+                            <div class="skill">HTML</div>
+                            <div class="skill">CSS</div>
+                            <div class="skill">Javascript</div>
+                            <div class="skill">Bash</div>
+                            <div class="skill">Git</div>
+                            <div class="skill">Assembly</div>
+                        </div>
+                        <p>...with more to come!</p>
+                    </div>
+                    <!-- Coursework -->
+
                 </div>
-                <div id="collapseFive" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFive">
-                  <div class="xp-panel-heading">
-                    <h3><a href="https://ece.engin.umich.edu/academics/course-information/course-descriptions/eecs-203/" target="_blank">EECS 203 Staff</a></h3>
-                    <h2>August 2020 - Present</h2>
-                  </div>
-                  <div class="panel-body">
-                    <p>
-                      I'm an instructional aide for <strong><a href="https://ece.engin.umich.edu/academics/course-information/course-descriptions/eecs-203/" target="_blank">EECS 203</a></strong> (Discrete Math) at the University of Michigan. I do anything I can to help our team of other IAs, GSIs, and profs keep this course of 900+ students running smoothly.
-                    <p>
-                    <p>
-                      My duties include running a weekly discussion section where students can review lecture material and practice problem-solving techniques, holding virtual office hours, writing and testing exam and homework problem sets, answering Piazza posts, and managing the chat in online Zoom lectures.
-                    <p>
-                    <p>
-                      All in all, I've been having a lot of fun teaching and working alongside the rest of the EECS 203 staff. I did quite a bit of teaching in high school (I coached and ran classes for Mathcounts, TA'd for Chinese Language classes, and ran a local programming club), so I'm glad I was able to find an opportunity to continue doing so in college.
-                    </p>
-                    <p>
-                      As a plus, there are some pretty interesting insights you can derive from discrete math. Did you know that, in a random group of just 23 people, there's about a <strong><a href="https://en.wikipedia.org/wiki/Birthday_problem" target="_blank">50% chance that two people have the same birthday</a></strong>?
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div> <!-- Instructional Aide @ EECS 203 -->
-          </div> <!-- Experience -->
-          <!-- Projects -->
-          <div class="tab-pane fade" id="list-third" role="tabpanel" aria-labelledby="list-third-list">
-            <h3>Projects</h3>
-            <p>under construction</p>
-          </div> <!-- Projects -->
-          <!-- Coursework -->
-          <div class="tab-pane fade" id="list-fourth" role="tabpanel" aria-labelledby="list-fourth-list">
-            <h3>Coursework</h3>
-            <div class="entry-header">
-              <h1>University of Michigan<span>Ann Arbor, MI</span></h1>
-              <h3>Computer Science, B.S.E.<span>2019-2023</span></h3>
+                <!-- Listgroup Content-->
             </div>
-            <ul>
-              <li><strong>EECS 482</strong> | Intro to Operating Systems (+ Advanced OS Projects)</li>
-              <li><strong>EECS 370</strong> | Intro to Computer Organization</li>
-              <li><strong>EECS 281</strong> | Data Structures and Algorithms</li>
-              <li><strong>EECS 280</strong> | Intro Programming and Data Structures</li>
-              <li><strong>EECS 203</strong> | Discrete Mathematics</li>
-              <li><strong>EECS 201</strong> | Computer Science Pragmatics</li>
-              <li><strong>ENGR 100</strong> | Microprocessors and Toys</li>
-              <li><strong>MATH 217</strong> | Linear Algebra</li>
-              <li><strong>MATH 215</strong> | Multivariable Calculus</li>
+            <!-- Main Content -->
+
+        </div>
+        <!-- .row -->
+    </div>
+    <!-- .container -->
+
+    <!-- Footer w/ Copyright, Lights, Contact -->
+    <footer id="footer">
+        <div class="footer-container">
+            <ul class="copyright">
+                <li>&copy; <span>2021</span> robert kang.</li>
+                <li>
+                    <a class="switch-theme" id="light-switch" href=#>lights on.</a>
+                </li>
+                <li>
+                    <a href="https://github.com/rkang246" target="_blank">github.</a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/robert-kang-54955a185/" target="_blank">linkedin.</a>
+                </li>
+                <li>
+                    <a href="files/Kang_Robert.pdf" target="_blank">resume.</a>
+                </li>
+                <li>
+                    <a href="mailto:rqkang@umich.edu">rqkang@umich.edu.</a>
+                </li>
+                <li>
+                    <a href="photo-gallery.html"><b>photos.</b></a>
+                </li>
             </ul>
-            <div class="skill-container">
-              <div class="skill">C++</div>
-              <div class="skill">Python</div>
-              <div class="skill">Java</div>
-              <div class="skill">SQL</div>
-              <div class="skill">HTML</div>
-              <div class="skill">CSS</div>
-              <div class="skill">Javascript</div>
-              <div class="skill">Bash</div>
-              <div class="skill">Git</div>
-              <div class="skill">Assembly</div>
-            </div>
-            <p>...with more to come!</p>
-          </div> <!-- Coursework -->
-
-        </div> <!-- Listgroup Content-->
-      </div> <!-- Main Content -->
-
-    </div> <!-- .row -->
-  </div> <!-- .container -->
-
-  <!-- Footer w/ Copyright, Lights, Contact -->
-  <footer id="footer">
-		<div class="footer-container">
-			<ul class="copyright">
-				<li>&copy; <span>2021</span> robert kang.</li>
-				<li>
-					<a class="switch-theme" id="light-switch" href=#>lights on.</a>
-				</li>
-        <li>
-          <a href="https://github.com/rkang246" target="_blank">github.</a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/robert-kang-54955a185/" target="_blank">linkedin.</a>
-        </li>
-        <li>
-          <a href="files/Kang_Robert.pdf" target="_blank">resume.</a>
-        </li>
-        <li>
-          <a href="mailto:rqkang@umich.edu">rqkang@umich.edu.</a>
-        </li>
-			</ul>
-		</div>
-	</footer>
+        </div>
+    </footer>
 
 
-  <!-- Scripts -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="static/javascript/main.js"></script>
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="static/javascript/main.js"></script>
 </body>
 
 </html>
