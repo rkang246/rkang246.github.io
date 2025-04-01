@@ -565,6 +565,7 @@ Footer
         position: fixed;
         background: var(--background-color);
         z-index: 10;
+        padding-top: 0.5em;
     }
     .container2.col-6,
     .nav-head-container.col-6 {

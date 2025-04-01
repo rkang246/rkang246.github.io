@@ -5,7 +5,9 @@ Idempotent build script for static image gallery :D
 """
 
 IMGUR_CLIENT_ID = "f918a83cac0b5da"
-GALLERY_IDS = ["nSu6lcA"] # Update with all galleries to be pulled from
+GALLERY_IDS = [
+    # "nSu6lcA"
+    "oBIZrig"] # Update with all galleries to be pulled from
 
 
 def call_gallery_api(client_id, gallery_id):
@@ -65,7 +67,7 @@ def main():
             photogrid_html += f'          </video>\n'
 
         else:
-            photogrid_html += f'          <img src="{url}" />\n'
+            photogrid_html += f'          <img src="{url}" loading="lazy" />\n'
         photogrid_html += f'        </div>\n'
     photogrid_html += '      </div>\n'
 
