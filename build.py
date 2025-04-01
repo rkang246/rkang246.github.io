@@ -52,7 +52,7 @@ def main():
             if start_index is None:
                 start_index = i  # Store the index of the first occurrence
             inside_photogrid = not inside_photogrid  # Toggle state
-            new_content.append(line)  # Keep the comment lines
+            new_content.append(line.rstrip())  # Keep the comment lines
         elif not inside_photogrid:
             new_content.append(line.rstrip())  # Preserve formatting
 
@@ -76,11 +76,11 @@ def main():
         new_content.insert(start_index + 1, photogrid_html.strip())
 
     # Write the modified content back to the file
-    print(new_content)
+    # print(new_content)
     with open("photo-gallery.html", "w", encoding="utf-8") as file:
         file.write("\n".join(new_content) + "\n")
 
-    print("Photogrid updated successfully!")
+    print(f"Successfully loaded {len(urls)} from imgur api")
 
 
 if __name__ == "__main__":

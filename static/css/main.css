@@ -558,14 +558,14 @@ Footer
     }
     .container2 {
         position: relative;
-        padding-top: 4em;
+        padding-top: 6em;
         z-index: 2
     }
     .nav-head-container {
         position: fixed;
         background: var(--background-color);
         z-index: 10;
-        padding-top: 0.5em;
+        padding-top: 1.5em;
     }
     .container2.col-6,
     .nav-head-container.col-6 {
@@ -579,6 +579,9 @@ Footer
     }
     .heading h1 {
         font-weight: 600;
+    }
+    .heading h2 {
+        line-height: 1em;
     }
     .tab-pane {
         display: block !important;
@@ -602,6 +605,7 @@ Footer
         opacity: 100%;
         z-index: 3;
         background: var(--background-color);
+        padding-bottom: 3em;
     }
 }
 
