@@ -8,7 +8,7 @@ IMGUR_CLIENT_ID = "f918a83cac0b5da"
 GALLERY_IDS = ["nSu6lcA"] # Update with all galleries to be pulled from
 
 
-def fetch_gallery_photos(client_id, gallery_id):
+def call_gallery_api(client_id, gallery_id):
     url = f"https://api.imgur.com/3/album/{gallery_id}/images"
     headers = {"Authorization": f"Client-ID {client_id}"}
     response = requests.get(url, headers=headers)
@@ -23,15 +23,18 @@ def fetch_gallery_photos(client_id, gallery_id):
     
     return urls
 
-
-def main():
-    # Fetch all URLs
+def fetch_image_urls():
     urls = []
     for gallery_id in GALLERY_IDS:
-        batch = fetch_gallery_photos(IMGUR_CLIENT_ID, gallery_id)
+        batch = call_gallery_api(IMGUR_CLIENT_ID, gallery_id)
         if len(batch) == 0:
             exit(1)
         urls.extend(batch)
+    return urls
+
+def main():
+    # Fetch all URLs
+    urls = fetch_image_urls()
 
     # Load HTML
     with open("photo-gallery.html", "r", encoding="utf-8") as file:
@@ -47,7 +50,7 @@ def main():
             if start_index is None:
                 start_index = i  # Store the index of the first occurrence
             inside_photogrid = not inside_photogrid  # Toggle state
-            new_content.append(line.strip())  # Keep the comment lines
+            new_content.append(line)  # Keep the comment lines
         elif not inside_photogrid:
             new_content.append(line.rstrip())  # Preserve formatting
 
@@ -55,7 +58,14 @@ def main():
     photogrid_html = '      <div class="masonry-container">\n'
     for url in urls:
         photogrid_html += f'        <div class="masonry-item">\n'
-        photogrid_html += f'          <img src="{url}" />\n'
+        if 'mp4' in url:
+            photogrid_html += f'          <video autoplay loop muted playsinline>\n'
+            photogrid_html += f'            <source src="{url}" type="video/mp4">\n'
+            photogrid_html += f'            Your browser does not support the video tag.\n'
+            photogrid_html += f'          </video>\n'
+
+        else:
+            photogrid_html += f'          <img src="{url}" />\n'
         photogrid_html += f'        </div>\n'
     photogrid_html += '      </div>\n'
 
