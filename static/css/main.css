@@ -65,6 +65,11 @@ h2 a:hover {
     display: inline;
 }
 
+.heading h1 span {
+    color: var(--inactive-color);
+    font-weight: 100;
+}
+
 .heading h1 a {
     color: var(--inactive-color);
     font-weight: 100;
@@ -75,7 +80,7 @@ h2 a:hover {
     text-decoration-style: none;
     text-decoration-skip-ink: none;
     text-decoration-line: none;
-    font-weight: 1000;
+    /* font-weight: 1000; */
 }
 
 

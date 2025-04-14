@@ -1,0 +1,7 @@
+# Jekyll Build Configuration
+title: "Robert Kang's Website"
+description: "A random collection of my work, projects, and life."
+baseurl: "" # The subpath of your site, e.g., /blog
+# Exclude files and directories from the build
+exclude:
+  - build.py
