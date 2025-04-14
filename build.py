@@ -38,25 +38,7 @@ def main():
     # Fetch all URLs
     urls = fetch_image_urls()
 
-    # Load HTML
-    with open("photo-gallery.html", "r", encoding="utf-8") as file:
-        content = file.readlines()
-    
-    # Remove existing photogrid content
-    inside_photogrid = False
-    new_content = []
-    start_index = None
-
-    for i, line in enumerate(content):
-        if "<!-- Photogrid -->" in line:
-            if start_index is None:
-                start_index = i  # Store the index of the first occurrence
-            inside_photogrid = not inside_photogrid  # Toggle state
-            new_content.append(line.rstrip())  # Keep the comment lines
-        elif not inside_photogrid:
-            new_content.append(line.rstrip())  # Preserve formatting
-
-    # Generate new photogrid content
+    # Generate new photogrid HTML
     photogrid_html = '      <div class="masonry-container">\n'
     for url in urls:
         photogrid_html += f'        <div class="masonry-item">\n'
@@ -71,14 +53,10 @@ def main():
         photogrid_html += f'        </div>\n'
     photogrid_html += '      </div>\n'
 
-    # Ensure the start index exists before inserting
-    if start_index is not None:
-        new_content.insert(start_index + 1, photogrid_html.strip())
-
-    # Write the modified content back to the file
+    # Overwrite content into jekyll template
     # print(new_content)
-    with open("photo-gallery.html", "w", encoding="utf-8") as file:
-        file.write("\n".join(new_content) + "\n")
+    with open("_includes/photos/photogrid.html", "w", encoding="utf-8") as file:
+        file.write(photogrid_html)
 
     print(f"Successfully loaded {len(urls)} from imgur api")
 

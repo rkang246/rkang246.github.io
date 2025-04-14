@@ -27,6 +27,10 @@
 <link href="static/css/bootstrap.css" rel="stylesheet">
 <link href="static/css/main.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+<!-- Conditionally load extra CSS -->
+{% if page.css %}
+  <link href="{{ page.css }}" rel="stylesheet">
+{% endif %}
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-L6BMY9J217"></script>
