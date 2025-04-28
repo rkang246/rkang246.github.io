@@ -1,0 +1,37 @@
+---
+layout: default
+title: Robert Kang
+---
+<div class="container">
+    <div class="row">
+        <div class="nav-head-container col-12">
+            <!-- Main Header -->
+            <div class="heading">
+                <h1>
+                    <a href="index.html">Robert Kang</a> <span>/</span> Bookshelf
+                </h1>
+                <h2>a collection of interesting readings and links</h2>
+            </div>
+
+            <!-- Body -->
+            <div class="shelf">
+                <h4>Books</h4>
+                <hr>
+                {% assign books = site.data.books %}
+                {% for entry in books %}
+                {% include bookshelf/book-entry.html entry=entry %}
+                {% endfor %}
+
+                <h4>Interesting Links</h4>
+                <hr>
+                {% assign links = site.data.links %}
+                {% for entry in links %}
+                {% include bookshelf/link-entry.html entry=entry %}
+                {% endfor %}
+            </div> <!-- links-collection -->
+        </div>
+    </div>
+
+    <!-- Main Body -->
+</div>
+</div>

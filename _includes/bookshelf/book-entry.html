@@ -1,0 +1,18 @@
+<div class="entry row equal">
+    <div class="col-lg-7">
+        <div class="title">
+            <a href="{{ entry.link }}">{{ entry.title }}</a>
+        </div>
+        <span class="bywho">{{ entry.left }}</span> <span class="divider">|</span>
+        <span class="description">{{ entry.right }}</span>
+        {% if entry.last %}
+        <span class="divider">|</span>
+        <span class="description">{{ entry.last }}</span>
+        {% endif %}
+    </div>
+    <div class="col-lg-5">
+        <div class="more">
+            {{ entry.desc }}
+        </div>
+    </div>
+</div>
