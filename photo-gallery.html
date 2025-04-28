@@ -14,10 +14,72 @@ css: static/css/photo-gallery.css
         <h2>an exercise in masonry gallery (featuring random shots from iphone)</h2>
       </div>
     </div>
-
-    <!-- Photogrid generated statically by build.py script -->
-     {% include photos/photogrid.html %}
   </div>
+  <!-- Photogrid generated statically by build.py script -->
+  <div class="grid are-images-unloaded">
+    <div class="grid__col-sizer"></div>
+    <div class="grid__gutter-sizer"></div>
+
+    {% include photos/photogrid.html %}
+  </div>
+  <!-- Infinite Scroll status elements -->
+  <div class="page-load-status">
+    <div class="loader-ellips infinite-scroll-request">
+      <span class="loader-ellips__dot"></span>
+      <span class="loader-ellips__dot"></span>
+      <span class="loader-ellips__dot"></span>
+      <span class="loader-ellips__dot"></span>
+    </div>
+    <p class="infinite-scroll-last">End of content</p>
+    <p class="infinite-scroll-error">No more pages to load</p>
+  </div>
+  
   <!-- .row -->
 </div>
 <!-- .container -->
+
+<!-- Masonry + Infinite Scroll JS -->
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script src="https://unpkg.com/infinite-scroll@4/dist/infinite-scroll.pkgd.min.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var grid = document.querySelector('.grid');
+  
+    var msnry = new Masonry(grid, {
+      itemSelector: '.grid__item',
+      columnWidth: '.grid__col-sizer',
+      gutter: '.grid__gutter-sizer',
+      percentPosition: true,
+    });
+  
+    imagesLoaded(grid, function() {
+      grid.classList.remove('are-images-unloaded');
+      msnry.layout();
+    });
+  
+    var infScroll = new InfiniteScroll(grid, {
+      path: function() {
+        return '/photo-html/photogrid' + (this.loadCount + 2) + '.html';
+      },
+      append: '.grid__item', // append automatically
+      outlayer: msnry,
+      status: '.page-load-status',
+      history: false,
+    });
+  
+    infScroll.on('append', function(response, path, items) {
+      imagesLoaded(items, function() {
+        msnry.appended(items); // <-- WAIT UNTIL IMAGES LOADED, THEN APPEND
+        msnry.reloadItems();
+        msnry.layout();
+      });
+    });
+
+    window.addEventListener('resize', function() {
+      msnry.reloadItems();
+      msnry.layout();
+    });
+  });
+  </script>
