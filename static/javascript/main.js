@@ -100,6 +100,8 @@ words.init();
 Light Switch
 */
 $("#light-switch").click(function(){
+  event.preventDefault();
+
   if ($(this).hasClass("active-light")) { //lights on, turn em off
     $(this).html("lights on.");
     document.documentElement.style.setProperty('--accent-color', '#11c973');
