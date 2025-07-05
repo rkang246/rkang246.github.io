@@ -13,9 +13,10 @@ Builds multiple pages for infinite scroll + masonry layout
 IMGUR_CLIENT_ID = "f918a83cac0b5da"
 GALLERY_IDS = [
     # "nSu6lcA"
-    "oBIZrig"] # Update with all galleries to be pulled from
+    "oBIZrig",
+    "iJ3neR5"] # Update with all galleries to be pulled from
 
-PHOTOS_PER_PAGE = 10
+PHOTOS_PER_PAGE = 15
 OUTPUT_DIR = "_includes/photos"
 
 def call_gallery_api(client_id, gallery_id):

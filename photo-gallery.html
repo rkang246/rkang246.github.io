@@ -74,6 +74,16 @@ css: static/css/photo-gallery.css
         msnry.appended(items); // <-- WAIT UNTIL IMAGES LOADED, THEN APPEND
         msnry.reloadItems();
         msnry.layout();
+
+        // Manually play newly appended videos
+        items.forEach(item => {
+          const videos = item.querySelectorAll('video');
+          videos.forEach(video => {
+            video.play().catch(error => {
+              console.error('Error playing video:', error);
+            });
+          });
+        })
       });
     });
 
