@@ -79,12 +79,14 @@ video {
 }
 
 /* Show caption when checkbox is checked */
-.grid__item .click-toggle input:checked + img + .caption {
+.grid__item .click-toggle input:checked + img + .caption,
+.grid__item .click-toggle input:checked + video + .caption {
     display: block;
 }
 
-.grid__item .click-toggle input:checked + img {
-    filter: brightness(70%);
+.grid__item .click-toggle input:checked + img,
+.grid__item .click-toggle input:checked + video {
+    filter: brightness(50%);
 }
 
 .page-load-status {
