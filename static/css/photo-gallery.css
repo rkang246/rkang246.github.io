@@ -14,7 +14,7 @@
     width: 1%;
 }
 
-/* hide by default */
+/* hide unloaded images by default */
 .grid.are-images-unloaded .image-grid__item {
     opacity: 0;
 }
@@ -25,21 +25,68 @@
     cursor: pointer;
 }
 
+.grid__item img,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+/* zoom image on hover */
+.grid__item:hover {
+    transform: scale(1.4);
+    z-index: 1;
+}
+
 .grid__item {
     /*previous styles*/
     transition: transform 0.3s ease;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.grid__item:hover {
-    transform: scale(1.4);
-    z-index: 1;
+/* Click to toggle caption visibility */
+.grid__item .click-toggle {
+    display: block;
+    position: relative;
+    cursor: pointer;
 }
 
-.grid__item img,
-video {
+/* Initially hide the caption */
+.grid__item .caption {
+    display: none;
+    position: absolute;
+    bottom: 40%;
+    left: 0;
+    right: 0;
+    color: white;
+    text-align: center;
+    padding: 8px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.grid__item .caption .title {
+  display: block;
+  text-align: center;
+  margin: 0.4em;
+  font-size: 14px;
+}
+
+.grid__item .caption .location {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  color: #ccc;
+}
+
+/* Show caption when checkbox is checked */
+.grid__item .click-toggle input:checked + img + .caption,
+.grid__item .click-toggle input:checked + video + .caption {
     display: block;
-    max-width: 100%;
+}
+
+.grid__item .click-toggle input:checked + img,
+.grid__item .click-toggle input:checked + video {
+    filter: brightness(50%);
 }
 
 .page-load-status {
