@@ -75,7 +75,7 @@ body {
 input[type=text], input[type=number], input[type=password] {
   background: var(--surface2); border: 1.5px solid var(--border); color: var(--text);
   padding: 13px 14px; border-radius: 10px; font-size: 16px; width: 100%; outline: none;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s; font-family: inherit;
 }
 input:focus { border-color: var(--accent); }
 input::placeholder { color: var(--muted); }
@@ -146,18 +146,32 @@ input::placeholder { color: var(--muted); }
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* ── Item cards (step 2 list) ── */
+/* ── Item list (bill + assign combined) ── */
 .item-list { margin-bottom: 6px; }
 .item-row {
-  display: flex; align-items: center; justify-content: space-between;
+  display: flex; align-items: center; gap: 8px;
   background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
-  padding: 12px 14px; margin-bottom: 7px;
+  padding: 8px 12px; margin-bottom: 6px;
 }
-.item-row-name { flex: 1; font-size: 15px; }
-.item-row-price { font-size: 15px; font-weight: 700; color: var(--accent); margin-left: 10px; }
+.item-row-left { display: flex; flex-direction: column; width: 62px; flex-shrink: 0; }
+.item-row-price {
+  font-size: 13px; font-weight: 700; color: var(--accent) !important;
+  font-family: inherit !important; background: transparent !important;
+  border: none !important; border-bottom: 1.5px solid transparent !important;
+  width: 62px !important; padding: 0 !important; border-radius: 0 !important; outline: none;
+}
+.item-row-price:focus { border-bottom-color: var(--accent) !important; }
+.item-row-name {
+  font-size: 11px; color: var(--muted) !important; font-family: inherit !important;
+  background: transparent !important; border: none !important;
+  border-bottom: 1.5px solid transparent !important;
+  width: 62px !important; padding: 0 !important; border-radius: 0 !important; outline: none;
+  text-overflow: ellipsis; overflow: hidden; white-space: nowrap;
+}
+.item-row-name:focus { border-bottom-color: var(--border) !important; }
 .item-row-del {
   background: none; border: none; color: var(--muted); cursor: pointer;
-  font-size: 18px; margin-left: 10px; padding: 0; line-height: 1;
+  font-size: 18px; padding: 0; line-height: 1; flex-shrink: 0;
 }
 
 /* ── Manual add row ── */
@@ -172,53 +186,48 @@ input::placeholder { color: var(--muted); }
 .total-box-label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 6px; }
 .total-input {
   background: transparent !important; border: none !important; padding: 0 !important;
-  font-size: 26px !important; font-weight: 800 !important; color: var(--accent) !important;
-  width: 100% !important;
+  font-size: 14px !important; font-weight: 700 !important; color: var(--accent) !important;
+  width: 100% !important; font-family: inherit !important;
 }
 
-/* ── Assign cards ── */
-.assign-card {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: 12px; padding: 14px; margin-bottom: 10px;
+/* ── Assign rows ── */
+.assign-row {
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px 0; border-bottom: 1px solid var(--border);
 }
-.assign-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
-.assign-name { font-size: 15px; font-weight: 600; flex: 1; }
-.assign-price {
-  font-size: 15px; font-weight: 700; color: var(--accent);
-  background: transparent; border: none; border-bottom: 1.5px solid var(--border);
-  width: 70px; text-align: right; outline: none; padding: 0 2px;
+.assign-row:last-child { border-bottom: none; }
+.assign-row-left { min-width: 62px; }
+.assign-row-price {
+  font-size: 14px; font-weight: 700; color: var(--accent);
+  background: transparent; border: none; border-bottom: 1.5px solid transparent;
+  width: 62px; padding: 0; outline: none; font-family: inherit;
 }
-.assign-price:focus { border-bottom-color: var(--accent); }
-.quick-row { display: flex; gap: 6px; margin-bottom: 9px; }
-.quick-btn {
-  background: none; border: 1px solid var(--border); color: var(--muted);
-  padding: 4px 11px; border-radius: 6px; font-size: 12px; cursor: pointer;
-  transition: color 0.15s, border-color 0.15s;
+.assign-row-price:focus { border-bottom-color: var(--accent); }
+.assign-row-label { font-size: 13px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 62px; }
+.assign-avatars { display: flex; flex-wrap: wrap; gap: 6px; flex: 1; }
+.avatar {
+  width: 30px; height: 30px; border-radius: 50%;
+  border: 1.5px solid var(--border); background: var(--surface2); color: var(--muted);
+  font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: all 0.15s; -webkit-user-select: none; user-select: none;
+  text-transform: uppercase; flex-shrink: 0;
 }
-.quick-btn:active { color: var(--text); border-color: var(--text); }
-.pills { display: flex; flex-wrap: wrap; gap: 7px; }
-.pill {
-  background: var(--surface2); border: 1.5px solid var(--border); color: var(--text);
-  padding: 7px 15px; border-radius: 20px; font-size: 14px; cursor: pointer;
-  transition: all 0.15s; -webkit-user-select: none; user-select: none;
-}
-.pill.on { background: var(--accent); border-color: var(--accent); color: #000; font-weight: 600; }
+.avatar.on { background: var(--accent); border-color: var(--accent); color: #000; }
 
 /* ── Results ── */
 .result-card {
   background: var(--surface); border: 1px solid var(--border);
   border-radius: 12px; padding: 16px; margin-bottom: 10px;
 }
-.result-name { font-size: 15px; font-weight: 700; margin-bottom: 10px; }
+.result-name {
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-size: 15px; font-weight: 700; margin-bottom: 10px;
+}
+.result-name-amt { color: var(--accent); font-size: 17px; }
 .result-line {
   display: flex; justify-content: space-between; font-size: 13px; color: var(--muted);
   margin-bottom: 4px;
 }
-.result-total {
-  display: flex; justify-content: space-between; font-size: 19px; font-weight: 800;
-  margin-top: 11px; padding-top: 11px; border-top: 1px solid var(--border);
-}
-.result-total-amt { color: var(--accent); }
 
 .summary-row {
   display: flex; justify-content: space-between; align-items: center;
@@ -277,9 +286,18 @@ input::placeholder { color: var(--muted); }
 
 /* ── Empty state ── */
 .empty { text-align: center; color: var(--muted); font-size: 14px; padding: 20px 0; }
+
+/* ── Avatar tooltip ── */
+#avatar-tip {
+  position: fixed; background: var(--text); color: var(--bg);
+  font-size: 12px; font-weight: 600; padding: 4px 8px; border-radius: 6px;
+  pointer-events: none; white-space: nowrap; z-index: 999;
+  transform: translateX(-50%); display: none;
+}
 </style>
 </head>
 <body>
+<div id="avatar-tip"></div>
 
 <!-- Header -->
 <div class="header">
@@ -295,7 +313,6 @@ input::placeholder { color: var(--muted); }
   <div class="progress-seg active" id="seg0"></div>
   <div class="progress-seg" id="seg1"></div>
   <div class="progress-seg" id="seg2"></div>
-  <div class="progress-seg" id="seg3"></div>
 </div>
 
 <!-- ═══ Step 1: People ═══ -->
@@ -311,10 +328,10 @@ input::placeholder { color: var(--muted); }
   <button class="btn-primary" id="btn0" onclick="goTo(1)" disabled>Continue →</button>
 </div>
 
-<!-- ═══ Step 2: Receipt ═══ -->
+<!-- ═══ Step 2: Bill + Assign ═══ -->
 <div class="step" id="step1">
   <div class="step-heading">The bill</div>
-  <div class="step-sub">Upload a receipt photo to auto-parse items, or add manually</div>
+  <div class="step-sub">Upload a receipt or add items manually — tap initials to split</div>
 
   <div class="upload-area" id="uploadArea" onclick="document.getElementById('fileInput').click()">
     <div class="upload-icon">📷</div>
@@ -325,14 +342,12 @@ input::placeholder { color: var(--muted); }
 
   <div id="parseStatus"></div>
 
-  <!-- Parsed / manual items list -->
   <div class="item-list" id="itemList"></div>
 
-  <!-- Manual add -->
   <div class="manual-section">
     <div class="manual-label">Add item manually</div>
     <div class="input-row">
-      <input type="text" id="iName" placeholder="Item name" autocomplete="off" style="flex:2"
+      <input type="text" id="iName" placeholder="Item name (optional)" autocomplete="off" style="flex:2"
              onkeydown="if(event.key==='Enter'){document.getElementById('iPrice').focus();event.preventDefault()}">
       <input type="number" id="iPrice" placeholder="Price" step="0.01" min="0" inputmode="decimal" style="flex:1"
              onkeydown="if(event.key==='Enter'){addItem();event.preventDefault()}">
@@ -340,26 +355,17 @@ input::placeholder { color: var(--muted); }
     </div>
   </div>
 
-  <!-- Total -->
   <div class="total-box">
     <div class="total-box-label">Final total (incl. tax &amp; tip)</div>
     <input class="total-input" type="number" id="totalInput" placeholder="0.00"
            step="0.01" min="0" inputmode="decimal" oninput="onTotalChange()">
   </div>
 
-  <button class="btn-primary" id="btn1" onclick="goTo(2)" disabled>Assign items →</button>
+  <button class="btn-primary" id="btn1" onclick="goTo(2)" disabled>See results →</button>
 </div>
 
-<!-- ═══ Step 3: Assign ═══ -->
+<!-- ═══ Step 3: Results ═══ -->
 <div class="step" id="step2">
-  <div class="step-heading">Who had what?</div>
-  <div class="step-sub">Tap names to toggle who shared each item</div>
-  <div id="assignList"></div>
-  <button class="btn-primary" onclick="goTo(3)">See results →</button>
-</div>
-
-<!-- ═══ Step 4: Results ═══ -->
-<div class="step" id="step3">
   <div class="step-heading">Split summary</div>
   <div class="summary-row" id="summaryRow"></div>
   <div style="display:flex;justify-content:flex-end;margin-bottom:10px">
@@ -418,13 +424,12 @@ function goTo(n) {
   document.getElementById('step' + step).classList.remove('active');
   step = n;
   document.getElementById('step' + step).classList.add('active');
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 3; i++) {
     const seg = document.getElementById('seg' + i);
     seg.className = 'progress-seg' + (i < n ? ' done' : i === n ? ' active' : '');
   }
   document.getElementById('backBtn').style.display = n > 0 ? 'block' : 'none';
-  if (n === 2) renderAssign();
-  if (n === 3) renderResults();
+  if (n === 2) renderResults();
   window.scrollTo(0, 0);
   save();
 }
@@ -576,7 +581,7 @@ function addItem() {
   S.items.push({ name, price, splits: [] });
   document.getElementById('iName').value = '';
   document.getElementById('iPrice').value = '';
-  document.getElementById('iName').focus();
+  document.getElementById('iPrice').focus();
   renderItemList();
   checkStep1();
   save();
@@ -589,13 +594,34 @@ function removeItem(i) {
   save();
 }
 
+function updateItemName(i, val) {
+  S.items[i].name = val.trim() || `Item ${i + 1}`;
+  save();
+}
+
+function updateItemPrice(i, val) {
+  const p = parseFloat(val);
+  if (!isNaN(p) && p >= 0) { S.items[i].price = p; checkStep1(); save(); }
+}
+
 function renderItemList() {
   const el = document.getElementById('itemList');
   if (!S.items.length) { el.innerHTML = ''; return; }
   el.innerHTML = S.items.map((it, i) =>
-    `<div class="item-row">
-       <span class="item-row-name">${esc(it.name)}</span>
-       <span class="item-row-price">$${it.price.toFixed(2)}</span>
+    `<div class="item-row" data-item="${i}">
+       <div class="item-row-left">
+         <input class="item-row-price" type="number" step="0.01" min="0" inputmode="decimal"
+           value="${it.price.toFixed(2)}" oninput="updateItemPrice(${i}, this.value)">
+         <input class="item-row-name" type="text" value="${esc(it.name)}" placeholder="name"
+           oninput="updateItemName(${i}, this.value)">
+       </div>
+       <div class="assign-avatars">
+         ${S.people.map((p, pi) =>
+           `<button class="avatar ${it.splits.includes(pi)?'on':''}"
+              onclick="toggle(${i},${pi})" title="${esc(p)}"
+              ontouchstart="showTip(this,'${esc(p)}')" ontouchend="hideTip()">${esc(p.charAt(0))}</button>`
+         ).join('')}
+       </div>
        <button class="item-row-del" onclick="removeItem(${i})" title="Remove">×</button>
      </div>`
   ).join('');
@@ -621,49 +647,14 @@ function updatePrice(ii, val) {
   if (!isNaN(p) && p >= 0) { S.items[ii].price = p; save(); }
 }
 
-function renderAssign() {
-  document.getElementById('assignList').innerHTML = S.items.map((it, ii) =>
-    `<div class="assign-card" data-item="${ii}">
-       <div class="assign-header">
-         <span class="assign-name">${esc(it.name)}</span>
-         <input class="assign-price" type="number" step="0.01" min="0" inputmode="decimal"
-           value="${it.price.toFixed(2)}" oninput="updatePrice(${ii}, this.value)">
-       </div>
-       <div class="quick-row">
-         <button class="quick-btn" onclick="setAll(${ii},true)">All</button>
-         <button class="quick-btn" onclick="setAll(${ii},false)">None</button>
-       </div>
-       <div class="pills">
-         ${S.people.map((p, pi) =>
-           `<button class="pill ${it.splits.includes(pi)?'on':''}"
-              onclick="toggle(${ii},${pi})">${esc(p)}</button>`
-         ).join('')}
-       </div>
-     </div>`
-  ).join('');
-}
-
 function toggle(ii, pi) {
   const splits = S.items[ii].splits;
   const idx = splits.indexOf(pi);
   if (idx === -1) { splits.push(pi); splits.sort((a,b)=>a-b); }
   else splits.splice(idx, 1);
-  // Update just the affected pill
-  const card = document.querySelector(`.assign-card[data-item="${ii}"]`);
-  if (card) {
-    card.querySelectorAll('.pill').forEach((btn, i) => {
-      btn.classList.toggle('on', S.items[ii].splits.includes(i));
-    });
-  }
-  save();
-}
-
-function setAll(ii, on) {
-  S.items[ii].splits = on ? S.people.map((_,i)=>i) : [];
-  // Re-render just this card's pills
-  const card = document.querySelector(`.assign-card[data-item="${ii}"]`);
-  if (card) {
-    card.querySelectorAll('.pill').forEach((btn, i) => {
+  const row = document.querySelector(`.item-row[data-item="${ii}"]`);
+  if (row) {
+    row.querySelectorAll('.avatar').forEach((btn, i) => {
       btn.classList.toggle('on', S.items[ii].splits.includes(i));
     });
   }
@@ -737,13 +728,12 @@ function renderResults() {
       </div>` : '';
 
     return `<div class="result-card">
-       <div class="result-name">${esc(r.name)}</div>
+       <div class="result-name">
+         <span>${esc(r.name)} owes</span>
+         <span class="result-name-amt">$${r.total.toFixed(2)}</span>
+       </div>
        ${mathHtml}
        ${!r.lines.length ? '<div class="result-line" style="font-style:italic"><span>No items assigned</span><span>—</span></div>' : ''}
-       <div class="result-total">
-         <span>Total</span>
-         <span class="result-total-amt">$${r.total.toFixed(2)}</span>
-       </div>
      </div>`;
   }).join('');
 }
@@ -793,6 +783,18 @@ function startOver() {
 // Util
 // ══════════════════════════════════════════════════
 
+function showTip(el, name) {
+  const tip = document.getElementById('avatar-tip');
+  const r = el.getBoundingClientRect();
+  tip.textContent = name;
+  tip.style.display = 'block';
+  tip.style.left = (r.left + r.width / 2) + 'px';
+  tip.style.top = (r.top - 30 + window.scrollY) + 'px';
+}
+function hideTip() {
+  document.getElementById('avatar-tip').style.display = 'none';
+}
+
 function esc(s) {
   return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
@@ -814,7 +816,7 @@ function esc(s) {
         checkStep1();
         if (S.total) document.getElementById('totalInput').value = S.total.toFixed(2);
         // Jump straight to results when loading a shared link
-        goTo(3);
+        goTo(2);
         return;
       }
       if (S.people.length >= 2) { goTo(1); return; }
