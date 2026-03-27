@@ -1,2 +1,5 @@
 _site
 .jekyll-cache
+
+# Terminal Paste Image folder
+.cp-images/
