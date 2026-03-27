@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Split</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+:root {
+  --bg: #0a0a0a;
+  --surface: #141414;
+  --surface2: #1e1e1e;
+  --border: #2c2c2c;
+  --text: #f0f0f0;
+  --muted: #666;
+  --accent: #4ade80;
+  --accent-bg: rgba(74,222,128,0.1);
+  --accent-dark: #166534;
+  --danger: #ef4444;
+  --danger-bg: rgba(239,68,68,0.1);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  min-height: 100vh;
+  max-width: 500px;
+  margin: 0 auto;
+  padding-bottom: 60px;
+}
+
+/* ── Header ── */
+.header {
+  display: grid;
+  grid-template-columns: 56px 1fr 56px;
+  align-items: center;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 10;
+}
+.header-title { text-align: center; font-size: 17px; font-weight: 700; letter-spacing: -0.3px; }
+.header-right { display: flex; justify-content: flex-end; }
+.icon-btn {
+  background: none; border: none; color: var(--muted); cursor: pointer;
+  font-size: 20px; padding: 4px; line-height: 1;
+}
+.back-btn {
+  background: none; border: none; color: var(--accent); cursor: pointer;
+  font-size: 14px; font-weight: 500; padding: 4px; white-space: nowrap;
+}
+
+/* ── Progress bar ── */
+.progress-bar {
+  display: flex; gap: 5px; padding: 12px 16px 0;
+}
+.progress-seg {
+  flex: 1; height: 3px; border-radius: 2px; background: var(--border);
+  transition: background 0.3s;
+}
+.progress-seg.done { background: var(--accent-dark); }
+.progress-seg.active { background: var(--accent); }
+
+/* ── Step views ── */
+.step { display: none; padding: 20px 16px 0; }
+.step.active { display: block; }
+.step-heading { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 4px; }
+.step-sub { font-size: 14px; color: var(--muted); margin-bottom: 20px; line-height: 1.4; }
+
+/* ── Inputs ── */
+input[type=text], input[type=number], input[type=password] {
+  background: var(--surface2); border: 1.5px solid var(--border); color: var(--text);
+  padding: 13px 14px; border-radius: 10px; font-size: 16px; width: 100%; outline: none;
+  transition: border-color 0.2s;
+}
+input:focus { border-color: var(--accent); }
+input::placeholder { color: var(--muted); }
+
+.input-row { display: flex; gap: 8px; margin-bottom: 12px; }
+.input-row input { flex: 1; }
+
+/* ── Buttons ── */
+.btn-add {
+  background: var(--surface2); border: 1.5px solid var(--border); color: var(--text);
+  width: 46px; height: 46px; border-radius: 10px; cursor: pointer; font-size: 22px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  transition: border-color 0.2s;
+}
+.btn-add:hover { border-color: var(--accent); }
+
+.btn-primary {
+  background: var(--accent); color: #000; border: none;
+  padding: 15px; border-radius: 12px; font-size: 16px; font-weight: 700;
+  cursor: pointer; width: 100%; margin-top: 16px; transition: opacity 0.2s;
+}
+.btn-primary:active { opacity: 0.8; }
+.btn-primary:disabled { opacity: 0.35; cursor: not-allowed; }
+
+.btn-secondary {
+  background: var(--surface2); color: var(--text); border: 1.5px solid var(--border);
+  padding: 14px; border-radius: 12px; font-size: 15px; font-weight: 500;
+  cursor: pointer; width: 100%; margin-top: 8px;
+}
+
+/* ── Tags (people) ── */
+.tags { display: flex; flex-wrap: wrap; gap: 7px; min-height: 10px; margin-bottom: 4px; }
+.tag {
+  background: var(--surface2); border: 1.5px solid var(--border);
+  padding: 7px 12px; border-radius: 20px; font-size: 14px;
+  display: flex; align-items: center; gap: 7px;
+}
+.tag-remove {
+  background: none; border: none; color: var(--muted); cursor: pointer;
+  font-size: 17px; line-height: 1; padding: 0;
+}
+
+/* ── Upload area ── */
+.upload-area {
+  border: 2px dashed var(--border); border-radius: 14px;
+  padding: 36px 20px; text-align: center; cursor: pointer;
+  transition: border-color 0.2s, background 0.2s; margin-bottom: 14px; position: relative;
+}
+.upload-area:active { border-color: var(--accent); background: var(--accent-bg); }
+.upload-icon { font-size: 44px; margin-bottom: 10px; }
+.upload-text { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+.upload-hint { font-size: 13px; color: var(--muted); }
+.upload-preview {
+  width: 100%; max-height: 220px; object-fit: contain;
+  border-radius: 8px; margin-bottom: 8px; display: block;
+}
+
+/* ── Status messages ── */
+.msg { padding: 11px 14px; border-radius: 10px; font-size: 14px; margin-bottom: 12px; }
+.msg.error { background: var(--danger-bg); border: 1px solid rgba(239,68,68,.3); color: #fca5a5; }
+.msg.success { background: var(--accent-bg); border: 1px solid rgba(74,222,128,.3); color: #86efac; }
+
+/* ── Loading ── */
+.loading { text-align: center; padding: 28px; color: var(--muted); font-size: 14px; }
+.spinner {
+  width: 30px; height: 30px; border: 3px solid var(--border); border-top-color: var(--accent);
+  border-radius: 50%; animation: spin 0.75s linear infinite; margin: 0 auto 10px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Item cards (step 2 list) ── */
+.item-list { margin-bottom: 6px; }
+.item-row {
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+  padding: 12px 14px; margin-bottom: 7px;
+}
+.item-row-name { flex: 1; font-size: 15px; }
+.item-row-price { font-size: 15px; font-weight: 700; color: var(--accent); margin-left: 10px; }
+.item-row-del {
+  background: none; border: none; color: var(--muted); cursor: pointer;
+  font-size: 18px; margin-left: 10px; padding: 0; line-height: 1;
+}
+
+/* ── Manual add row ── */
+.manual-section { margin-top: 14px; }
+.manual-label { font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+
+/* ── Total box ── */
+.total-box {
+  background: var(--surface); border: 1.5px solid var(--border);
+  border-radius: 12px; padding: 14px 16px; margin-top: 14px;
+}
+.total-box-label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 6px; }
+.total-input {
+  background: transparent !important; border: none !important; padding: 0 !important;
+  font-size: 26px !important; font-weight: 800 !important; color: var(--accent) !important;
+  width: 100% !important;
+}
+
+/* ── Assign cards ── */
+.assign-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 12px; padding: 14px; margin-bottom: 10px;
+}
+.assign-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
+.assign-name { font-size: 15px; font-weight: 600; flex: 1; }
+.assign-price {
+  font-size: 15px; font-weight: 700; color: var(--accent);
+  background: transparent; border: none; border-bottom: 1.5px solid var(--border);
+  width: 70px; text-align: right; outline: none; padding: 0 2px;
+}
+.assign-price:focus { border-bottom-color: var(--accent); }
+.quick-row { display: flex; gap: 6px; margin-bottom: 9px; }
+.quick-btn {
+  background: none; border: 1px solid var(--border); color: var(--muted);
+  padding: 4px 11px; border-radius: 6px; font-size: 12px; cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+.quick-btn:active { color: var(--text); border-color: var(--text); }
+.pills { display: flex; flex-wrap: wrap; gap: 7px; }
+.pill {
+  background: var(--surface2); border: 1.5px solid var(--border); color: var(--text);
+  padding: 7px 15px; border-radius: 20px; font-size: 14px; cursor: pointer;
+  transition: all 0.15s; -webkit-user-select: none; user-select: none;
+}
+.pill.on { background: var(--accent); border-color: var(--accent); color: #000; font-weight: 600; }
+
+/* ── Results ── */
+.result-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 12px; padding: 16px; margin-bottom: 10px;
+}
+.result-name { font-size: 15px; font-weight: 700; margin-bottom: 10px; }
+.result-line {
+  display: flex; justify-content: space-between; font-size: 13px; color: var(--muted);
+  margin-bottom: 4px;
+}
+.result-total {
+  display: flex; justify-content: space-between; font-size: 19px; font-weight: 800;
+  margin-top: 11px; padding-top: 11px; border-top: 1px solid var(--border);
+}
+.result-total-amt { color: var(--accent); }
+
+.summary-row {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 13px; color: var(--muted); margin-bottom: 16px;
+}
+
+/* ── Share ── */
+.share-btn {
+  background: var(--surface2); color: var(--text); border: 1.5px solid var(--border);
+  padding: 14px; border-radius: 12px; font-size: 15px; cursor: pointer;
+  width: 100%; margin-top: 16px; display: flex; align-items: center;
+  justify-content: center; gap: 8px; transition: border-color 0.2s;
+}
+.share-btn:active { border-color: var(--accent); }
+
+/* ── Divider ── */
+.divider { height: 1px; background: var(--border); margin: 14px 0; }
+
+/* ── Modal ── */
+.overlay {
+  display: none; position: fixed; inset: 0; background: rgba(0,0,0,.75);
+  z-index: 100; align-items: flex-end; justify-content: center;
+}
+.overlay.open { display: flex; }
+.modal {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 20px 20px 0 0; padding: 24px 20px 32px; width: 100%; max-width: 500px;
+}
+.modal-title { font-size: 18px; font-weight: 700; margin-bottom: 16px; }
+.modal-hint { font-size: 13px; color: var(--muted); margin-top: 9px; line-height: 1.55; }
+.modal-hint a { color: var(--accent); text-decoration: none; }
+
+/* ── Detail toggle ── */
+.detail-toggle {
+  background: none; border: 1px solid var(--border); color: var(--muted);
+  padding: 5px 12px; border-radius: 6px; font-size: 13px; cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+.detail-toggle.on { color: var(--accent); border-color: var(--accent); }
+
+/* ── Math detail rows ── */
+.math-block { margin: 8px 0 4px; }
+.math-line {
+  display: flex; justify-content: space-between; font-size: 12px;
+  color: var(--muted); margin-bottom: 3px; padding-left: 8px;
+}
+.math-line .expr { color: #555; }
+.math-subtotal {
+  display: flex; justify-content: space-between; font-size: 12px;
+  color: var(--muted); border-top: 1px dashed var(--border);
+  padding-top: 5px; margin-top: 4px; margin-bottom: 4px;
+}
+.math-tax {
+  display: flex; justify-content: space-between; font-size: 12px; color: var(--muted);
+}
+
+/* ── Empty state ── */
+.empty { text-align: center; color: var(--muted); font-size: 14px; padding: 20px 0; }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <div>
+    <button class="back-btn" id="backBtn" onclick="goBack()" style="display:none">← Back</button>
+  </div>
+  <div class="header-title">Split</div>
+  <div class="header-right"></div>
+</div>
+
+<!-- Progress -->
+<div class="progress-bar">
+  <div class="progress-seg active" id="seg0"></div>
+  <div class="progress-seg" id="seg1"></div>
+  <div class="progress-seg" id="seg2"></div>
+  <div class="progress-seg" id="seg3"></div>
+</div>
+
+<!-- ═══ Step 1: People ═══ -->
+<div class="step active" id="step0">
+  <div class="step-heading">Who's splitting?</div>
+  <div class="step-sub">Add everyone at the table</div>
+  <div class="input-row">
+    <input type="text" id="personInput" placeholder="Name" autocomplete="off" autocapitalize="words"
+           onkeydown="if(event.key==='Enter'){addPerson();event.preventDefault()}">
+    <button class="btn-add" onclick="addPerson()">+</button>
+  </div>
+  <div class="tags" id="peopleTags"></div>
+  <button class="btn-primary" id="btn0" onclick="goTo(1)" disabled>Continue →</button>
+</div>
+
+<!-- ═══ Step 2: Receipt ═══ -->
+<div class="step" id="step1">
+  <div class="step-heading">The bill</div>
+  <div class="step-sub">Upload a receipt photo to auto-parse items, or add manually</div>
+
+  <div class="upload-area" id="uploadArea" onclick="document.getElementById('fileInput').click()">
+    <div class="upload-icon">📷</div>
+    <div class="upload-text">Upload receipt photo</div>
+    <div class="upload-hint">Tap to take a photo or choose from library</div>
+  </div>
+  <input type="file" id="fileInput" accept="image/*" style="display:none" onchange="handleFile(event)">
+
+  <div id="parseStatus"></div>
+
+  <!-- Parsed / manual items list -->
+  <div class="item-list" id="itemList"></div>
+
+  <!-- Manual add -->
+  <div class="manual-section">
+    <div class="manual-label">Add item manually</div>
+    <div class="input-row">
+      <input type="text" id="iName" placeholder="Item name" autocomplete="off" style="flex:2"
+             onkeydown="if(event.key==='Enter'){document.getElementById('iPrice').focus();event.preventDefault()}">
+      <input type="number" id="iPrice" placeholder="Price" step="0.01" min="0" inputmode="decimal" style="flex:1"
+             onkeydown="if(event.key==='Enter'){addItem();event.preventDefault()}">
+      <button class="btn-add" onclick="addItem()">+</button>
+    </div>
+  </div>
+
+  <!-- Total -->
+  <div class="total-box">
+    <div class="total-box-label">Final total (incl. tax &amp; tip)</div>
+    <input class="total-input" type="number" id="totalInput" placeholder="0.00"
+           step="0.01" min="0" inputmode="decimal" oninput="onTotalChange()">
+  </div>
+
+  <button class="btn-primary" id="btn1" onclick="goTo(2)" disabled>Assign items →</button>
+</div>
+
+<!-- ═══ Step 3: Assign ═══ -->
+<div class="step" id="step2">
+  <div class="step-heading">Who had what?</div>
+  <div class="step-sub">Tap names to toggle who shared each item</div>
+  <div id="assignList"></div>
+  <button class="btn-primary" onclick="goTo(3)">See results →</button>
+</div>
+
+<!-- ═══ Step 4: Results ═══ -->
+<div class="step" id="step3">
+  <div class="step-heading">Split summary</div>
+  <div class="summary-row" id="summaryRow"></div>
+  <div style="display:flex;justify-content:flex-end;margin-bottom:10px">
+    <button class="detail-toggle" id="detailToggle" onclick="toggleDetail()">Show math</button>
+  </div>
+  <div id="resultList"></div>
+  <button class="share-btn" id="shareBtn" onclick="share()">🔗 Copy shareable link</button>
+  <button class="btn-secondary" onclick="startOver()">Start new split</button>
+  <p style="text-align:center;font-size:11px;color:var(--muted);margin-top:20px;line-height:1.6">
+    inspired by arya kumar's <a href="https://bill.arya-k.com/" target="_blank" style="color:var(--muted);text-decoration:underline">website</a>
+    inspired by jack britton's <a href="https://www.jackbritton.me/billysplits/index.html" target="_blank" style="color:var(--muted);text-decoration:underline">website</a>
+  </p>
+</div>
+
+
+<script>
+// ══════════════════════════════════════════════════
+// Config — replace with your key before deploying
+// ══════════════════════════════════════════════════
+const GEMINI_KEY = 'AIzaSyCErq01LCHzJNd2IDp5YvjtpHg-NvwCu6I';
+
+// ══════════════════════════════════════════════════
+// State
+// ══════════════════════════════════════════════════
+
+let S = {
+  people: [],          // string[]
+  items: [],           // { name:str, price:num, splits:num[] }
+  total: null          // num | null
+};
+let step = 0;
+
+// ══════════════════════════════════════════════════
+// URL encode / decode
+// ══════════════════════════════════════════════════
+
+function encode(obj) {
+  try { return btoa(unescape(encodeURIComponent(JSON.stringify(obj)))); }
+  catch { return ''; }
+}
+function decode(s) {
+  try { return JSON.parse(decodeURIComponent(escape(atob(s)))); }
+  catch { return null; }
+}
+function save() {
+  const url = new URL(location.href);
+  url.searchParams.set('s', encode(S));
+  history.replaceState({}, '', url);
+}
+
+// ══════════════════════════════════════════════════
+// Navigation
+// ══════════════════════════════════════════════════
+
+function goTo(n) {
+  document.getElementById('step' + step).classList.remove('active');
+  step = n;
+  document.getElementById('step' + step).classList.add('active');
+  for (let i = 0; i < 4; i++) {
+    const seg = document.getElementById('seg' + i);
+    seg.className = 'progress-seg' + (i < n ? ' done' : i === n ? ' active' : '');
+  }
+  document.getElementById('backBtn').style.display = n > 0 ? 'block' : 'none';
+  if (n === 2) renderAssign();
+  if (n === 3) renderResults();
+  window.scrollTo(0, 0);
+  save();
+}
+
+function goBack() {
+  if (step > 0) goTo(step - 1);
+}
+
+// ══════════════════════════════════════════════════
+// Step 1 — People
+// ══════════════════════════════════════════════════
+
+function addPerson() {
+  const inp = document.getElementById('personInput');
+  const name = inp.value.trim();
+  if (!name || S.people.includes(name)) { inp.value = ''; return; }
+  S.people.push(name);
+  inp.value = '';
+  renderPeople();
+  save();
+}
+
+function removePerson(i) {
+  S.people.splice(i, 1);
+  S.items.forEach(item => {
+    item.splits = item.splits.filter(x => x !== i).map(x => x > i ? x - 1 : x);
+  });
+  renderPeople();
+  save();
+}
+
+function renderPeople() {
+  document.getElementById('peopleTags').innerHTML =
+    S.people.map((p, i) =>
+      `<div class="tag">${esc(p)}<button class="tag-remove" onclick="removePerson(${i})">×</button></div>`
+    ).join('');
+  document.getElementById('btn0').disabled = S.people.length < 2;
+}
+
+// ══════════════════════════════════════════════════
+// Step 2 — Receipt
+// ══════════════════════════════════════════════════
+
+function handleFile(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = ev => {
+    const src = ev.target.result;
+    document.getElementById('uploadArea').innerHTML =
+      `<img src="${src}" class="upload-preview" alt="Receipt">
+       <div class="upload-hint" style="margin-top:4px">Tap to change photo</div>`;
+    parseReceipt(src, file.type);
+  };
+  reader.readAsDataURL(file);
+  // Reset so same file can be re-selected
+  e.target.value = '';
+}
+
+async function parseReceipt(dataUrl, mimeType) {
+  if (!GEMINI_KEY || GEMINI_KEY === 'YOUR_GEMINI_KEY_HERE') {
+    setStatus('error', 'Receipt parsing not configured. Add items manually below.');
+    return;
+  }
+  setStatus('loading', 'Parsing receipt…');
+  const b64 = dataUrl.split(',')[1];
+  const mt = ['image/jpeg','image/png','image/gif','image/webp'].includes(mimeType)
+    ? mimeType : 'image/jpeg';
+  const MODELS = [
+    'gemini-2.5-flash',
+    'gemini-3.1-flash-lite-preview'
+  ];
+  const PROMPT = `Extract all line items and the final total from this receipt.
+Return ONLY a JSON object — no markdown, no explanation:
+{"items":[{"name":"item name","price":0.00}],"total":0.00}
+- items: each individual food/drink line item with its price (skip subtotal/tax/tip lines)
+- total: the grand total the customer paid (including tax and tip)
+If no tip line, total = subtotal + tax.`;
+
+  for (const model of MODELS) {
+    try {
+      const res = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${GEMINI_KEY}`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            contents: [{ parts: [
+              { inline_data: { mime_type: mt, data: b64 } },
+              { text: PROMPT }
+            ]}]
+          })
+        }
+      );
+      if (!res.ok) {
+        const e = await res.json().catch(() => ({}));
+        const isQuota = res.status === 429 || e.error?.status === 'RESOURCE_EXHAUSTED';
+        if (isQuota && model !== MODELS[MODELS.length - 1]) continue; // try next model
+        throw new Error(e.error?.message || `HTTP ${res.status}`);
+      }
+      const data = await res.json();
+      const raw = data.candidates?.[0]?.content?.parts?.[0]?.text?.trim();
+      if (!raw) throw new Error('Empty response');
+      const match = raw.match(/\{[\s\S]*\}/);
+      if (!match) throw new Error('No JSON in response');
+      const parsed = JSON.parse(match[0]);
+      if (!parsed.items?.length) throw new Error('No items found');
+
+      S.items = parsed.items.map(it => ({
+        name: String(it.name),
+        price: Math.abs(parseFloat(it.price) || 0),
+        splits: []
+      }));
+      if (parsed.total) {
+        S.total = parseFloat(parsed.total);
+        document.getElementById('totalInput').value = S.total.toFixed(2);
+      }
+      renderItemList();
+      checkStep1();
+      save();
+      setStatus('success', `✓ Parsed ${S.items.length} item${S.items.length !== 1 ? 's' : ''}`);
+      setTimeout(() => setStatus('', ''), 3000);
+      return;
+    } catch (err) {
+      if (model !== MODELS[MODELS.length - 1]) continue;
+      console.error(err);
+      setStatus('error', 'Daily parsing limit reached. Add items manually below.');
+    }
+  }
+}
+
+function setStatus(type, msg) {
+  const el = document.getElementById('parseStatus');
+  if (type === 'loading') {
+    el.innerHTML = `<div class="loading"><div class="spinner"></div>${msg}</div>`;
+  } else if (type === 'error') {
+    el.innerHTML = `<div class="msg error">${esc(msg)}</div>`;
+  } else if (type === 'success') {
+    el.innerHTML = `<div class="msg success">${esc(msg)}</div>`;
+  } else {
+    el.innerHTML = '';
+  }
+}
+
+function addItem() {
+  const name = document.getElementById('iName').value.trim() || `Item ${S.items.length + 1}`;
+  const price = parseFloat(document.getElementById('iPrice').value);
+  if (isNaN(price) || price <= 0) return;
+  S.items.push({ name, price, splits: [] });
+  document.getElementById('iName').value = '';
+  document.getElementById('iPrice').value = '';
+  document.getElementById('iName').focus();
+  renderItemList();
+  checkStep1();
+  save();
+}
+
+function removeItem(i) {
+  S.items.splice(i, 1);
+  renderItemList();
+  checkStep1();
+  save();
+}
+
+function renderItemList() {
+  const el = document.getElementById('itemList');
+  if (!S.items.length) { el.innerHTML = ''; return; }
+  el.innerHTML = S.items.map((it, i) =>
+    `<div class="item-row">
+       <span class="item-row-name">${esc(it.name)}</span>
+       <span class="item-row-price">$${it.price.toFixed(2)}</span>
+       <button class="item-row-del" onclick="removeItem(${i})" title="Remove">×</button>
+     </div>`
+  ).join('');
+}
+
+function onTotalChange() {
+  const v = parseFloat(document.getElementById('totalInput').value);
+  S.total = isNaN(v) ? null : v;
+  checkStep1();
+  save();
+}
+
+function checkStep1() {
+  document.getElementById('btn1').disabled = !S.items.length || !S.total;
+}
+
+// ══════════════════════════════════════════════════
+// Step 3 — Assign
+// ══════════════════════════════════════════════════
+
+function updatePrice(ii, val) {
+  const p = parseFloat(val);
+  if (!isNaN(p) && p >= 0) { S.items[ii].price = p; save(); }
+}
+
+function renderAssign() {
+  document.getElementById('assignList').innerHTML = S.items.map((it, ii) =>
+    `<div class="assign-card" data-item="${ii}">
+       <div class="assign-header">
+         <span class="assign-name">${esc(it.name)}</span>
+         <input class="assign-price" type="number" step="0.01" min="0" inputmode="decimal"
+           value="${it.price.toFixed(2)}" oninput="updatePrice(${ii}, this.value)">
+       </div>
+       <div class="quick-row">
+         <button class="quick-btn" onclick="setAll(${ii},true)">All</button>
+         <button class="quick-btn" onclick="setAll(${ii},false)">None</button>
+       </div>
+       <div class="pills">
+         ${S.people.map((p, pi) =>
+           `<button class="pill ${it.splits.includes(pi)?'on':''}"
+              onclick="toggle(${ii},${pi})">${esc(p)}</button>`
+         ).join('')}
+       </div>
+     </div>`
+  ).join('');
+}
+
+function toggle(ii, pi) {
+  const splits = S.items[ii].splits;
+  const idx = splits.indexOf(pi);
+  if (idx === -1) { splits.push(pi); splits.sort((a,b)=>a-b); }
+  else splits.splice(idx, 1);
+  // Update just the affected pill
+  const card = document.querySelector(`.assign-card[data-item="${ii}"]`);
+  if (card) {
+    card.querySelectorAll('.pill').forEach((btn, i) => {
+      btn.classList.toggle('on', S.items[ii].splits.includes(i));
+    });
+  }
+  save();
+}
+
+function setAll(ii, on) {
+  S.items[ii].splits = on ? S.people.map((_,i)=>i) : [];
+  // Re-render just this card's pills
+  const card = document.querySelector(`.assign-card[data-item="${ii}"]`);
+  if (card) {
+    card.querySelectorAll('.pill').forEach((btn, i) => {
+      btn.classList.toggle('on', S.items[ii].splits.includes(i));
+    });
+  }
+  save();
+}
+
+// ══════════════════════════════════════════════════
+// Step 4 — Results
+// ══════════════════════════════════════════════════
+
+function calcSplit() {
+  const rows = S.people.map(() => ({ sub: 0, lines: [] }));
+  S.items.forEach(it => {
+    if (!it.splits.length) return;
+    const share = it.price / it.splits.length;
+    it.splits.forEach(pi => {
+      rows[pi].sub += share;
+      rows[pi].lines.push({ name: it.name, share });
+    });
+  });
+  const totalSub = rows.reduce((s, r) => s + r.sub, 0);
+  const finalTotal = S.total ?? totalSub;
+  const mult = totalSub > 0 ? finalTotal / totalSub : 1;
+  return rows.map((r, i) => ({
+    name: S.people[i],
+    lines: r.lines,
+    sub: r.sub,
+    total: r.sub * mult
+  }));
+}
+
+let showDetail = false;
+
+function toggleDetail() {
+  showDetail = !showDetail;
+  const btn = document.getElementById('detailToggle');
+  btn.textContent = showDetail ? 'Hide math' : 'Show math';
+  btn.classList.toggle('on', showDetail);
+  renderResults();
+}
+
+function renderResults() {
+  const results = calcSplit();
+  const finalTotal = S.total ?? results.reduce((s,r)=>s+r.total,0);
+  const itemsSub = S.items.reduce((s,it)=>s+it.price,0);
+  const totalSub = results.reduce((s,r)=>s+r.sub,0);
+  const mult = totalSub > 0 ? finalTotal / totalSub : 1;
+  const taxTipAmt = finalTotal - totalSub;
+
+  document.getElementById('summaryRow').innerHTML =
+    `<span>${S.items.length} item${S.items.length!==1?'s':''} · subtotal $${itemsSub.toFixed(2)}</span>
+     <span style="color:var(--accent);font-weight:700">Total $${finalTotal.toFixed(2)}</span>`;
+
+  document.getElementById('resultList').innerHTML = results.map(r => {
+    const mathHtml = showDetail && r.lines.length ? `
+      <div class="math-block">
+        ${r.lines.map(l => {
+          const count = S.items.find(it => it.name === l.name)?.splits.length ?? 1;
+          return `<div class="math-line">
+            <span>${esc(l.name)}</span>
+            <span class="expr">$${(l.share * count).toFixed(2)} ÷ ${count} = $${l.share.toFixed(2)}</span>
+          </div>`;
+        }).join('')}
+        <div class="math-subtotal">
+          <span>Items subtotal</span><span>$${r.sub.toFixed(2)}</span>
+        </div>
+        <div class="math-tax">
+          <span>Tax &amp; tip ($${r.sub.toFixed(2)} × ${mult.toFixed(4)} ratio)</span>
+          <span>+$${(r.total - r.sub).toFixed(2)}</span>
+        </div>
+      </div>` : '';
+
+    return `<div class="result-card">
+       <div class="result-name">${esc(r.name)}</div>
+       ${mathHtml}
+       ${!r.lines.length ? '<div class="result-line" style="font-style:italic"><span>No items assigned</span><span>—</span></div>' : ''}
+       <div class="result-total">
+         <span>Total</span>
+         <span class="result-total-amt">$${r.total.toFixed(2)}</span>
+       </div>
+     </div>`;
+  }).join('');
+}
+
+// ══════════════════════════════════════════════════
+// Share
+// ══════════════════════════════════════════════════
+
+async function share() {
+  save();
+  const url = location.href;
+  const btn = document.getElementById('shareBtn');
+  try {
+    if (navigator.share && /Mobi|Android/i.test(navigator.userAgent)) {
+      await navigator.share({ title: 'Split', url });
+    } else {
+      await navigator.clipboard.writeText(url);
+      btn.innerHTML = '✓ Copied to clipboard!';
+      setTimeout(() => btn.innerHTML = '🔗 Copy shareable link', 2200);
+    }
+  } catch {
+    prompt('Copy this link:', url);
+  }
+}
+
+function startOver() {
+  if (!confirm('Start a new split? This will clear everything.')) return;
+  S = { people: [], items: [], total: null };
+  const url = new URL(location.href);
+  url.searchParams.delete('s');
+  history.replaceState({}, '', url);
+  // Reset UI
+  document.getElementById('peopleTags').innerHTML = '';
+  document.getElementById('itemList').innerHTML = '';
+  document.getElementById('parseStatus').innerHTML = '';
+  document.getElementById('totalInput').value = '';
+  document.getElementById('uploadArea').innerHTML =
+    `<div class="upload-icon">📷</div>
+     <div class="upload-text">Upload receipt photo</div>
+     <div class="upload-hint">Tap to take a photo or choose from library</div>`;
+  document.getElementById('btn0').disabled = true;
+  document.getElementById('btn1').disabled = true;
+  goTo(0);
+}
+
+// ══════════════════════════════════════════════════
+// Util
+// ══════════════════════════════════════════════════
+
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ══════════════════════════════════════════════════
+// Init — restore from URL
+// ══════════════════════════════════════════════════
+
+(function init() {
+  const params = new URLSearchParams(location.search);
+  const encoded = params.get('s');
+  if (encoded) {
+    const loaded = decode(encoded);
+    if (loaded?.people) {
+      S = loaded;
+      renderPeople();
+      if (S.items.length) {
+        renderItemList();
+        checkStep1();
+        if (S.total) document.getElementById('totalInput').value = S.total.toFixed(2);
+        // Jump straight to results when loading a shared link
+        goTo(3);
+        return;
+      }
+      if (S.people.length >= 2) { goTo(1); return; }
+    }
+  }
+})();
+</script>
+</body>
+</html>
